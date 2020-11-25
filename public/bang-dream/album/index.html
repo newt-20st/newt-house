@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>BanG Dream! CD一覧</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="noindex">
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!--og-->
+    <meta property="og:title" content="BanG Dream! ディスコグラフィー一覧">
+    <meta property="og:site_name" content="にゅーとのへや">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@newt_20st">
+
+    <!-- Favicon -->
+
+    <!-- ===Web Font=== -->
+    <!-- Noto Sans JP / Noto Serif JP （ライセンス：Open Font License） -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Noto+Serif+JP:700|Oswald:400,500|Lato:400,900&amp;subset=japanese" rel="stylesheet">
+    <!--Font Awesome-->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- YakuHanJPs（約物半角専用のWebフォント　ライセンス：SIL OFL 1.1） -->
+    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanjp_s.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanmp_s.min.css" rel="stylesheet">
+
+    <!--Style Sheets-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/bang-dream.css">
+    <link rel="stylesheet" href="../../css/song.css">
+</head>
+
+<body>
+    <!-- ローディング画面 -->
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <div id="wrapper">
+        <div id="header" class="sticky-top">
+            <h2 id="songTitle" style="font-weight: 800;"></h2>
+        </div>
+        <div id="main">
+            <div id="songInfo" class="container">
+                <div class="row">
+                    <div id="songImage" class="col-12 col-md-4" style="margin:auto;">
+                    </div>
+                    <div id="songData" class="col-12 col-md-8">
+                    </div>
+                </div>
+                <div id="songMv">
+                </div>
+                <div id="songMusicService">
+                </div>
+                <div id="songInclude">
+                </div>
+                <div class="a-botton-a mt-3 mb-1" id="backToTop">
+                    <a href="/bang-dream/album/" class="a-dere">
+                        <span class="a-button">
+                            BACK TO TOP
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div id="songList"></div>
+
+        </div>
+        <div id="footer"></div>
+    </div>
+
+
+    <!--Firebase Realtime Database settings-->
+    <!------------------------------------------------------------------------------------------------->
+    <script src="/__/firebase/7.23.0/firebase.js"></script>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.23.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.23.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-storage.js"></script>
+
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script>
+        // Set the configuration for your app
+        // TODO: Replace with your project's config object
+        var config = {
+            apiKey: "AIzaSyD7LUc4TBHriYD1QOdB-OQoOu09Lqxh5go",
+            authDomain: "newt-house.firebaseapp.com",
+            projectId: "newt-house",
+            databaseURL: "https://newt-house.firebaseio.com",
+            storageBucket: "newt-house.appspot.com"
+        };
+        firebase.initializeApp(config);
+
+        // Get a reference to the database service
+        const database = firebase.firestore();
+    </script>
+    <!------------------------------------------------------------------------------------------------->
+    <!--Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.0/URI.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../js/album.js"></script>
+    <script>
+        var setIntervalId = setInterval(findTargetElement, 1000);
+
+        function findTargetElement() {
+
+            if (document.getElementById('songTitle').textContent != "" && document.getElementById('songInfo').textContent != "") {
+                const spinner = document.getElementById('loading');
+                spinner.classList.add('loaded');
+                clearInterval(setIntervalId);
+            }
+        }
+    </script>
+</body>
+
+</html>

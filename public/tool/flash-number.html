@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>にゅーとのへや</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="noindex">
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!--og-->
+    <meta property="og:title" content="にゅーとのへや">
+    <meta property="og:site_name" content="にゅーとのへや">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@newt_20st">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../img/favicon.ico">
+
+    <!-- ===Web Font=== -->
+    <!-- Noto Sans JP / Noto Serif JP （ライセンス：Open Font License） -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Noto+Serif+JP:700|Oswald:400,500|Lato:400,900&amp;subset=japanese" rel="stylesheet">
+    <!--Font Awesome-->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- YakuHanJPs（約物半角専用のWebフォント　ライセンス：SIL OFL 1.1） -->
+    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanjp_s.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanmp_s.min.css" rel="stylesheet">
+
+    <!--Style Sheets-->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header"></div>
+        <div id="main">
+            <h2>フラッシュ暗算</h2>
+            <div id="flashSettings">
+                <table id="flashSettingsForm">
+                    <tr>
+                        <td>Speed</td>
+                        <td><input id="flashSpeed" type="range" value="1.0" min="0.3" max="3.0" step="0.1" oninput="document.getElementById('flashSpeedOutput').value=this.value"></td>
+                        <td><output id="flashSpeedOutput">1.0</output></td>
+                    </tr>
+                    <tr>
+                        <td>Low</td>
+                        <td><input type="number" min="1" max="10" id="flashLow" value="2"></td>
+                        <td>※1～10</td>
+                    </tr>
+                    <tr>
+                        <td>Quantity</td>
+                        <td><input type="number" min="1" max="20" id="flashNum" value="5"></td>
+                        <td>※1～20</td>
+                    </tr>
+                </table>
+            </div>
+            <p class="flashNumberP">
+                <button type="button" id="flashStart">スタート</button>
+                <div id="flashInputArea"></div>
+            </p>
+            <p class="flashNumberP"><button type="button" id="flashAnswer">答え</button>
+                <div id="flashResultAreaCover">
+                    <div id="flashResultArea"></div>
+                </div>
+            </p>
+            <a href="../" style="display: block;width: fit-content;margin: auto;"><i class="fas fa-home fa-fw"></i>BACK
+                TO TOP</a>
+        </div>
+        <div id="footer"></div>
+    </div>
+    <!--Scripts-->
+    <!--Firebase Realtime Database settings-->
+    <!------------------------------------------------------------------------------------------------->
+    <script src="/__/firebase/7.23.0/firebase.js"></script>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.23.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.23.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script>
+        // Set the configuration for your app
+        var firebaseConfig = {
+            apiKey: "AIzaSyD7LUc4TBHriYD1QOdB-OQoOu09Lqxh5go",
+            authDomain: "newt-house.firebaseapp.com",
+            databaseURL: "https://newt-house.firebaseio.com",
+            projectId: "newt-house",
+            storageBucket: "newt-house.appspot.com",
+            messagingSenderId: "210434933562",
+            appId: "1:210434933562:web:132d20954df1073c1f4603",
+            measurementId: "G-MFCKT3PG1L"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        // Get a reference to the database service
+        var database = firebase.database();
+    </script>
+    <!------------------------------------------------------------------------------------------------->
+    <script>
+        function createRandomNumber(n) {
+            var codeTable = "0123456789";
+            var firstCodeTable = "123456789";
+            var r = "";
+            r += firstCodeTable.charAt(Math.floor(firstCodeTable.length * Math.random()));
+            for (var i = 0, k = codeTable.length; i < n - 1; i++) {
+                r += codeTable.charAt(Math.floor(k * Math.random()));
+            }
+            return r;
+        }
+
+        function sleep(waitMsec) {
+            var startMsec = new Date();
+
+            // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+            while (new Date() - startMsec < waitMsec);
+        }
+
+        var flashStart = document.getElementById('flashStart');
+        var flashAnswer = document.getElementById('flashAnswer');
+
+        flashStart.addEventListener('click', () => {
+            try {
+                const flashSpeed = document.getElementById("flashSpeed").value;
+                const flashLow = document.getElementById("flashLow").value;
+                const flashNum = document.getElementById("flashNum").value;
+                const inputArea = document.getElementById("flashInputArea");
+                const resultArea = document.getElementById("flashResultArea");
+                resultArea.style.display = "none";
+                var count = 0;
+                var sum = 0;
+                var answer = " [ ";
+                var id = setInterval(
+                    function() {
+                        if (count >= flashNum) {
+                            clearInterval(id);　 //idをclearIntervalで指定
+                            inputArea.innerHTML = "";
+                            answer += "]";
+                            resultArea.innerHTML = '<span id="flashResultMain">' + sum + '</span>' + answer;
+                        } else {
+                            var inputNumber = createRandomNumber(flashLow);
+                            inputArea.innerHTML = inputNumber;
+                            sum += Number(inputNumber);
+                            answer += inputNumber + " ";
+                            count++;
+                        }
+                    }, (flashSpeed * 1000)
+                );
+
+            } catch (e) {
+                const resultArea = document.getElementById("flashResultArea");
+                resultArea.innerHTML = "設定の値が正しくありません";
+                resultArea.style.display = "block";
+            }
+
+        });
+
+        flashAnswer.addEventListener('click', () => {
+            const resultArea = document.getElementById("flashResultArea");
+            resultArea.style.display = "block";
+        });
+    </script>
+</body>
+
+</html>

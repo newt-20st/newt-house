@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>NEWT house</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="noindex">
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!--og-->
+    <meta property="og:title" content="にゅーとのへや">
+    <meta property="og:site_name" content="にゅーとのへや">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@newt_20st">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../img/favicon.ico">
+
+    <!-- ===Web Font=== -->
+    <!-- Noto Sans JP / Noto Serif JP （ライセンス：Open Font License） -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Noto+Serif+JP:700|Oswald:400,500|Lato:400,900&amp;subset=japanese" rel="stylesheet">
+    <!--Font Awesome-->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- YakuHanJPs（約物半角専用のWebフォント　ライセンス：SIL OFL 1.1） -->
+    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanjp_s.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanmp_s.min.css" rel="stylesheet">
+
+    <!--Style Sheets-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+</head>
+
+<body onLoad="onBtnClick()">
+    <div id="wrapper">
+        <div id="header"></div>
+        <div id="main" class="container-xl">
+            <h1><i class="far fa-flag"></i>リリースノート</h1>
+            <p><a href="../quiz/search.html"><i class="fas fa-home"></i>ホーム</a> ＞ リリースノート</p>
+            <h3>ver.1.1.0 [2020/10/25]</h3>
+            <ul>
+                <li>検索ページを追加</li>
+                <li>2度目以降の読み込みの高速化</li>
+                <li>ファイル名・ファイルID・問題番号が表示されるように</li>
+            </ul>
+            <h3>ver.1.0.0 [2020/10/25]</h3>
+            <ul>
+                <li>ページの作成</li>
+            </ul>
+            <h2>現在確認している不具合の一覧</h2>
+            <ul>
+                <li>履歴のチェックのオンオフが正常に作動しない</li>
+                <li>「クリックでチェックした問題のみ表示」ボタンが作動しない</li>
+                <li>ファイルID・シート番号が不適切で問題が表示されない時のリダイレクトが作動しない</li>
+            </ul>
+        </div>
+        <div id="footer"></div>
+    </div>
+    <!--Scripts-->
+    <script src="../js/quiz.js"></script>
+    <!-----Firebase Realtime Database settings----->
+    <!--These code can use all firebase project.-->
+    <!------------------------------------------------------------------------------------------------->
+    <script src="/__/firebase/7.23.0/firebase.js"></script>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.23.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.23.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script>
+        // Set the configuration for your app
+        var firebaseConfig = {
+            apiKey: "AIzaSyD7LUc4TBHriYD1QOdB-OQoOu09Lqxh5go",
+            authDomain: "newt-house.firebaseapp.com",
+            databaseURL: "https://newt-house.firebaseio.com",
+            projectId: "newt-house",
+            storageBucket: "newt-house.appspot.com",
+            messagingSenderId: "210434933562",
+            appId: "1:210434933562:web:132d20954df1073c1f4603",
+            measurementId: "G-MFCKT3PG1L"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        // Get a reference to the database service
+        var database = firebase.firestore();
+    </script>
+    <!------------------------------------------------------------------------------------------------->
+</body>
+
+</html>

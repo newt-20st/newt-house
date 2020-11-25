@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>にゅーとのへや</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="noindex">
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!--og-->
+    <meta property="og:title" content="にゅーとのへや">
+    <meta property="og:site_name" content="にゅーとのへや">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@newt_20st">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../img/favicon.ico">
+
+    <!-- ===Web Font=== -->
+    <!-- Noto Sans JP / Noto Serif JP （ライセンス：Open Font License） -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Noto+Serif+JP:700|Oswald:400,500|Lato:400,900&amp;subset=japanese" rel="stylesheet">
+    <!--Font Awesome-->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <!-- YakuHanJPs（約物半角専用のWebフォント　ライセンス：SIL OFL 1.1） -->
+    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanjp_s.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanmp_s.min.css" rel="stylesheet">
+
+    <!--Style Sheets-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header"></div>
+        <div id="main">
+            <h2><span>お探しのページは</span><span>見つかりませんでした</span></h2>
+            <div class="imgClass" style="width: 50%;">
+                <img src="img/404.png">
+            </div>
+            <p>お探しのページは見つかりませんでした。削除されたか、現在制作中のページの可能性があります。</p>
+            <p class="linkButton"><a href="/" class="a-dere"><span class="a-button">BACK TO TOP</span></a>
+            </p>
+        </div>
+        <div id="footer"></div>
+    </div>
+    <!--Scripts-->
+
+    <!--Firebase Realtime Database settings-->
+    <!------------------------------------------------------------------------------------------------->
+    <script src="/__/firebase/7.23.0/firebase.js"></script>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.23.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.23.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.23.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script>
+        // Set the configuration for your app
+        var firebaseConfig = {
+            apiKey: "AIzaSyD7LUc4TBHriYD1QOdB-OQoOu09Lqxh5go",
+            authDomain: "newt-house.firebaseapp.com",
+            databaseURL: "https://newt-house.firebaseio.com",
+            projectId: "newt-house",
+            storageBucket: "newt-house.appspot.com",
+            messagingSenderId: "210434933562",
+            appId: "1:210434933562:web:132d20954df1073c1f4603",
+            measurementId: "G-MFCKT3PG1L"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        // Get a reference to the database service
+        var database = firebase.database();
+    </script>
+    <!------------------------------------------------------------------------------------------------->
+    <script>
+        function writeUserData() {
+            firebase.database().ref('users/' + "userId").set({
+                username: "name",
+                email: "email",
+                profile_picture: "imageUrl"
+            });
+        }
+    </script>
+</body>
+
+</html>

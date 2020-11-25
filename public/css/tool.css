@@ -1,0 +1,85 @@
+/* flash-number.html */
+
+.flashNumberP {
+    text-align: center;
+    margin: auto;
+}
+
+#flashInputArea {
+    width: min(70%, 400px);
+    text-align: center;
+    border: 3px solid black;
+    line-height: 0;
+    padding: 1em 0;
+    border-radius: 5px;
+    margin: .5em auto;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+#flashResultAreaCover {
+    width: 98%;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: .5em auto;
+    font-size: 1.5em;
+    min-height: 5em;
+}
+
+#flashResultMain {
+    font-weight: 800;
+}
+
+#flashResultArea {
+    margin: 1%;
+}
+
+#flashStart,
+#flashAnswer {
+    border: 1px solid black;
+    padding: 0.3em 1em;
+    transition: all .5s;
+    border-radius: 5px;
+    margin: .5em 0;
+}
+
+#flashStart:hover,
+#flashAnswer:hover {
+    opacity: .5;
+}
+
+#flashSettings {
+    font-size: 1.5em;
+}
+
+#flashLow,
+#flashNum {
+    font-size: .8em;
+    width: 90%;
+    font-family: 'YakuHanJPs';
+    padding: 0 0 0 5%;
+}
+
+#flashSettingsForm tr td:nth-of-type(1) {
+    padding: 0 .5em;
+    border-bottom: 1px solid rgb(128 128 128);
+}
+
+
+/* sincostan.html */
+
+#sctStart {
+    border: 1px solid black;
+    padding: 0.3em 1em;
+    transition: all .5s;
+    border-radius: 5px;
+    margin: .5em 0;
+}
+
+#sctStart:hover {
+    opacity: .5;
+}
+
+#sctInput {
+    width: 100%;
+}
