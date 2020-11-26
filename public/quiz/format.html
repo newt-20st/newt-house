@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>にゅーとのへや</title>
+    <title>Support Format｜Quiz Flasher</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="robots" content="noindex">
@@ -17,54 +17,46 @@
     <meta http-equiv="Expires" content="0">
 
     <!--og-->
-    <meta property="og:title" content="にゅーとのへや">
-    <meta property="og:site_name" content="にゅーとのへや">
+    <meta property="og:title" content="Support Format｜Quiz Flasher">
+    <meta property="og:site_name" content="Quiz Flasher">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
+    <meta property="og:url" content="newt-house.web.app/quiz/search.html">
+    <meta property="og:image" content="../img/quiz-flasher-og.png">
     <meta name="twitter:card" content="summary_large_image">
-
 
     <!-- Favicon -->
     <link rel="icon" href="../img/favicon.ico">
 
-    <!-- Web Font -->
+    <!-- ===Web Font=== -->
     <!-- Noto Sans JP / Noto Serif JP （ライセンス：Open Font License） -->
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Noto+Serif+JP:700|Oswald:400,500|Lato:400,900&amp;subset=japanese" rel="stylesheet">
-
     <!--Font Awesome-->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-
     <!-- YakuHanJPs（約物半角専用のWebフォント　ライセンス：SIL OFL 1.1） -->
     <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanjp_s.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanmp_s.min.css" rel="stylesheet">
 
     <!--Style Sheets-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quiz.css">
 </head>
 
 <body>
     <div id="wrapper">
         <div id="header"></div>
         <div id="main" class="container-xl">
-            <h2>Realtime Database</h2>
-            <p id="realTimeTest1">
-            </p>
-            <p>
-                名前:<br><input type="text" id="realTimeTestNameInput"><br> テキスト:<br>
-                <input type="text" id="realTimeTestTextInput"><br>
-                <button type="button" id="realTimeTest1Btn">送信</button>
-            </p>
-            <p class="linkButton"><a href="../" class="a-dere"><span class="a-button">BACK TO TOP</span></a>
-            </p>
-            </main>
+            <p><a href="search.html"><i class="fas fa-home"></i>ホーム</a> > Support Format</p>
+            <h1><i class="far fa-hand-point-up"></i>Support Format</h1>
+            <h2>現在作成中</h2>
+            <p>しばらくお待ち下さい</p>
         </div>
         <div id="footer"></div>
     </div>
-    <!--Firebase Realtime Database settings-->
+    <!--Scripts-->
+    <!-----Firebase Realtime Database settings----->
+    <!--These code can use all firebase project.-->
     <!------------------------------------------------------------------------------------------------->
     <script src="/__/firebase/7.23.0/firebase.js"></script>
     <!-- update the version number as needed -->
@@ -78,21 +70,23 @@
     <script defer src="/__/firebase/init.js"></script>
     <script>
         // Set the configuration for your app
-        // TODO: Replace with your project's config object
-        var config = {
+        var firebaseConfig = {
             apiKey: "AIzaSyD7LUc4TBHriYD1QOdB-OQoOu09Lqxh5go",
             authDomain: "newt-house.firebaseapp.com",
             databaseURL: "https://newt-house.firebaseio.com",
-            storageBucket: "newt-house.appspot.com"
+            projectId: "newt-house",
+            storageBucket: "newt-house.appspot.com",
+            messagingSenderId: "210434933562",
+            appId: "1:210434933562:web:132d20954df1073c1f4603",
+            measurementId: "G-MFCKT3PG1L"
         };
-        firebase.initializeApp(config);
-
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
         // Get a reference to the database service
-        var database = firebase.database();
+        var database = firebase.firestore();
     </script>
     <!------------------------------------------------------------------------------------------------->
-    <!--Scripts-->
-    <script src="../js/tool.js"></script>
 </body>
 
 </html>

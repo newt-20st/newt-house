@@ -44,6 +44,7 @@ function getInfo() {
 function onloadSearch() {
     if (urlParams["p"] == typeof undefined || !urlParams["p"]) {
         document.getElementById("load").style.display = "none";
+        document.getElementById("result").innerHTML = "URLが適切ではありません";
     } else {
         try {
             onloadGetInfo();
@@ -69,11 +70,11 @@ function onloadGetInfo() {
             console.log(data[1]);
             var sheets = '<ul>';
             for (var i = 0; i < data[2]; i++) {
-                sheets = sheets + '<li><a href="index.html?p=' + data[1] + '&s=' + i + '">' + data[3][i] + '</a> (' + data[4][i] + '問)' + '</a></li><br>';
+                sheets = sheets + '<br><li><a href="index.html?p=' + data[1] + '&s=' + i + '">' + data[3][i] + '</a> (' + data[4][i] + '問)' + '</a></li>';
             }
             sheets = sheets + '</ul>';
             var displayText;
-            displayText = '<b>スプレッドシートのID:</b> ' + data[1] + '<br><b>URL:</b><a href="https://docs.google.com/spreadsheets/d/' + data[1] + '" target="_blank">こちら</a><br><b>ファイル名:</b> ' + data[0] + '<br><b>シート数:</b> ' + data[2] + '<br>検索結果が適切な場合は下のリンクをクリックしてください。allはすべてのシートからランダムに出題します。シンプルを選ぶと問題文の末尾に問題番号が付きません。<br>' + sheets;
+            displayText = '<b>スプレッドシートのID:</b> ' + data[1] + '<br><b>元データ:</b> <a href="https://docs.google.com/spreadsheets/d/' + data[1] + '" target="_blank">' + data[0] + ' - Google スプレッドシート<i class="fas fa-external-link-alt"></i></a><br><b>ファイル名:</b> ' + data[0] + '<br><b>シート数:</b> ' + data[2] + '<br><br>検索結果が適切な場合は下のリンクをクリックしてください。allはすべてのシートからランダムに出題します。シンプルを選ぶと問題文の末尾に問題番号が付きません。<br>' + sheets;
             document.getElementById('result').innerHTML = displayText;
             document.getElementById('result').style.display = "block";
             document.getElementById('load').style.display = "none";

@@ -116,6 +116,9 @@ function onBtnClick() {
                                 if (document.getElementById("fileSheetRow").textContent == "[0]") {
                                     document.getElementById('load').style.display = "none";
                                     document.getElementById("quiz").innerHTML = "[002]このシートにはデータが存在しません。<a href='/quiz/search.html'>検索ページ</a>から違うシートを選択してください";
+                                } else {
+                                    document.getElementById('load').style.display = "none";
+                                    document.getElementById("quiz").innerHTML = "[003]現在問題を表示することができません。このシートにデータが存在しない可能性があります。<a href='/quiz/search.html'>検索ページ</a>から違うシートを選択してください";
                                 }
                             }
                         }, 5000);

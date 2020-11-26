@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>NEWT house</title>
+    <title>Quiz Flasher</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="robots" content="noindex">
@@ -17,14 +17,13 @@
     <meta http-equiv="Expires" content="0">
 
     <!--og-->
-    <meta property="og:title" content="にゅーとのへや">
-    <meta property="og:site_name" content="にゅーとのへや">
+    <meta property="og:title" content="Quiz Flasher">
+    <meta property="og:site_name" content="Quiz Flasher">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
+    <meta property="og:url" content="newt-house.web.app/quiz/search.html">
+    <meta property="og:image" content="../img/quiz-flasher-og.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@newt_20st">
 
     <!-- Favicon -->
     <link rel="icon" href="../img/favicon.ico">
@@ -41,7 +40,8 @@
     <!--Style Sheets-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/quiz.css">
+    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="css/modal.css">
 </head>
 
 <body onLoad="onBtnClick()">
@@ -49,7 +49,7 @@
         <div id="header"></div>
         <div id="main" class="container-xl">
             <h1 id="fileTitle"></h1>
-            <p><a href="../"><i class="fas fa-home"></i>ホーム</a> > <a href="../quiz/search.html">スプレッドシートidから検索</a><wbr> >
+            <p><a href="../quiz/search.html"><i class="fas fa-home"></i>スプレッドシートを検索</a><wbr> >
                 <span id="fileName"><a href="../search.html"></a></span> <span id="fileSheet"></span> <span id="fileSheetRow"></span>
             </p>
             <p id="intro">
@@ -67,12 +67,34 @@
                 <div id="link"></div>
                 <div id="pick" onclick="getValue()" style="text-align:center;">クリックでチェックが付いた<wbr>問題のみ表示</div>
             </div>
-            <button id="deleateCash" class="btn btn-primary" type="button">キャッシュの削除</button>
+        </div>
+        <img src="img/modal-btn.png" id="modalbtn" onclick="modalbtn()">
+        <div id="modal" style="display:none;">
+            <div id="modal-content">
+                <div id="modal-body" class="container-xl">
+                    <p>元データ： <span id="fileUrl"></span></p>
+                    <h2>キャッシュの削除</h2>
+                    スプレッドシート側でデータの更新が行われた場合はこれをクリックしてください。
+                    <button id="deleateCash" class="btn btn-primary" type="button">キャッシュの削除</button>
+                    <h2>備考</h2>
+                    <p>
+                        <ul>
+                            <li>フォーマットは基本1列目が問題番号、2列目が問題、3列目が答えです。</li>
+                            <li>問題番号のみ記入されている列や、問題や答えは書いていないのに違う列に何らかの文字が記入されている、といった列はなくしてください。</li>
+                            <li style="color: rgb(200,100,0);">リンク先の画面で問題が表示されない場合、スプレッドシートのファイルが非公開の設定になっていないか確認してください。
+                            </li>
+                            <li>リンク先の画面のURLを共有することで他の人も同じ問題リストからこの機能を利用することが出来ます。</li>
+                            <li><a href="release.html">リリースノート<i class="fas fa-link"></i></a></li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
         </div>
         <div id="footer"></div>
     </div>
     <!--Scripts-->
-    <script src="../js/quiz.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/modal.js"></script>
     <!-----Firebase Realtime Database settings----->
     <!--These code can use all firebase project.-->
     <!------------------------------------------------------------------------------------------------->

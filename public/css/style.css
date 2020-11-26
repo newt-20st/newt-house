@@ -19,7 +19,7 @@ h2 {
 }
 
 h3 {
-    background: linear-gradient(to right, rgb(33, 150, 244), rgba(115, 169, 255, 0.5));
+    /* background: linear-gradient(to right, rgb(33, 150, 244), rgba(115, 169, 255, 0.5)); */
     font-size: 1.5em;
     line-height: 1.3em;
     color: rgb(255 255 255);
@@ -49,4 +49,14 @@ a:hover {
     text-decoration: none;
     background: rgb(33 150 244);
     color: rgb(255 255 255);
+}
+
+ul.check {
+    list-style: none;
+}
+
+ul.check li:before {
+    font-family: FontAwesome;
+    font-weight: 800;
+    content: '\f00c';
 }

@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>NEWT house</title>
+    <title>リリースノート｜Quiz Flasher</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="robots" content="noindex">
@@ -17,14 +17,13 @@
     <meta http-equiv="Expires" content="0">
 
     <!--og-->
-    <meta property="og:title" content="にゅーとのへや">
-    <meta property="og:site_name" content="にゅーとのへや">
+    <meta property="og:title" content="リリースノート｜Quiz Flasher">
+    <meta property="og:site_name" content="Quiz Flasher">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
+    <meta property="og:url" content="newt-house.web.app/quiz/search.html">
+    <meta property="og:image" content="../img/quiz-flasher-og.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@newt_20st">
 
     <!-- Favicon -->
     <link rel="icon" href="../img/favicon.ico">
@@ -41,15 +40,25 @@
     <!--Style Sheets-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/quiz.css">
+    <link rel="stylesheet" href="css/quiz.css">
 </head>
 
-<body onLoad="onBtnClick()">
+<body>
     <div id="wrapper">
         <div id="header"></div>
         <div id="main" class="container-xl">
             <h1><i class="far fa-flag"></i>リリースノート</h1>
-            <p><a href="../quiz/search.html"><i class="fas fa-home"></i>ホーム</a> ＞ リリースノート</p>
+            <p><a href="search.html"><i class="fas fa-home"></i>ホーム</a> > リリースノート</p>
+            <p>ソースコード： <a href="https://github.com/newt-20st/newt-house" target="_blank">newt-20st/newt-house<i
+                        class="fas fa-external-link-alt"></i></a></p>
+            <h2>リリースノート</h2>
+            <h3>ver.1.2.0 [2020/11/26]</h3>
+            <ul>
+                <li>エラーコードの追加</li>
+                <li>設定メニューの追加</li>
+                <li>デフォルトのカラーテーマをダークモードに</li>
+                <li>その他不具合の修正</li>
+            </ul>
             <h3>ver.1.1.0 [2020/10/25]</h3>
             <ul>
                 <li>検索ページを追加</li>
@@ -62,15 +71,16 @@
             </ul>
             <h2>現在確認している不具合の一覧</h2>
             <ul>
-                <li>履歴のチェックのオンオフが正常に作動しない</li>
                 <li>「クリックでチェックした問題のみ表示」ボタンが作動しない</li>
-                <li>ファイルID・シート番号が不適切で問題が表示されない時のリダイレクトが作動しない</li>
             </ul>
+            <p>不具合を発見した際は<a href="https://docs.google.com/forms/d/e/1FAIpQLSf1YFywx-KD_1q2QRG8BJlbYAF8cRLlscu92loIvEiNn6k7Sg/viewform">こちらのフォーム</a>からご連絡をお願いします
+            </p>
+            <h2>これから実装予定の機能</h2>
+            <ul></ul>
         </div>
         <div id="footer"></div>
     </div>
     <!--Scripts-->
-    <script src="../js/quiz.js"></script>
     <!-----Firebase Realtime Database settings----->
     <!--These code can use all firebase project.-->
     <!------------------------------------------------------------------------------------------------->
