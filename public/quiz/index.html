@@ -17,12 +17,12 @@
     <meta http-equiv="Expires" content="0">
 
     <!--og-->
-    <meta property="og:title" content="Quiz Flasher">
+    <meta property="og:title" content="スプレッドシートを検索｜Quiz Flasher">
     <meta property="og:site_name" content="Quiz Flasher">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
     <meta property="og:url" content="newt-house.web.app/quiz/search.html">
-    <meta property="og:image" content="../img/quiz-flasher-og.png">
+    <meta property="og:image" content="img/quiz-flasher-og.png">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Favicon -->
@@ -41,60 +41,38 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="css/quiz.css">
-    <link rel="stylesheet" href="css/modal.css">
 </head>
 
-<body onLoad="onBtnClick()">
+<body>
     <div id="wrapper">
         <div id="header"></div>
         <div id="main" class="container-xl">
-            <h1 id="fileTitle"></h1>
-            <p><a href="../quiz/search.html"><i class="fas fa-home"></i>スプレッドシートを検索</a><wbr> >
-                <span id="fileName"><a href="../search.html"></a></span> <span id="fileSheet"></span> <span id="fileSheetRow"></span>
+            <p><a href="../"><i class="fas fa-home"></i>ホーム</a> > <a href="../quiz/">Quiz Flasher</a>
             </p>
-            <p id="intro">
-                ※読み込みに5秒以上かかる場合はもう一度押してください</p>
-            <div id="load-d"><span id="load">読込中...</span></div>
-            <div type="button" id="btn" onclick="onBtnClick()">答えを見る</div>
-            <div id="text">
-                <div id="quiz"><br></div>
-                <div id="answer"></div>
-            </div>
-            <div id="history">
-                <br style="clear: both;" />
-                <h2 class="after">履歴</h2>
-                <div id="archive"></div>
-                <div id="link"></div>
-                <div id="pick" onclick="getValue()" style="text-align:center;">クリックでチェックが付いた<wbr>問題のみ表示</div>
-            </div>
-        </div>
-        <img src="img/modal-btn.png" id="modalbtn" onclick="modalbtn()">
-        <div id="modal" style="display:none;">
-            <div id="modal-content">
-                <div id="modal-body" class="container-xl">
-                    <p>元データ： <span id="fileUrl"></span></p>
-                    <h2>キャッシュの削除</h2>
-                    スプレッドシート側でデータの更新が行われた場合はこれをクリックしてください。
-                    <button id="deleateCash" class="btn btn-primary" type="button">キャッシュの削除</button>
-                    <h2>備考</h2>
-                    <p>
-                        <ul>
-                            <li>フォーマットは基本1列目が問題番号、2列目が問題、3列目が答えです。</li>
-                            <li>問題番号のみ記入されている列や、問題や答えは書いていないのに違う列に何らかの文字が記入されている、といった列はなくしてください。</li>
-                            <li style="color: rgb(200,100,0);">リンク先の画面で問題が表示されない場合、スプレッドシートのファイルが非公開の設定になっていないか確認してください。
-                            </li>
-                            <li>リンク先の画面のURLを共有することで他の人も同じ問題リストからこの機能を利用することが出来ます。</li>
-                            <li><a href="release.html">リリースノート<i class="fas fa-link"></i></a></li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
+            <h1>Quiz Flasher</h1>
+            <h2>このサイトは何？</h2>
+            <p>問題データを入れたGoogleスプレッドシートのファイルから、ランダムに問題を出題するツールです。すべてのシートからランダムに出題させたり、特定のシートの特定の問題のみでランダムに出題させることも出来ます。<a href="search.html">スプレッドシートの検索はこちらから<i class="fas fa-link"></i></a>。</p>
+            <h2>注目の問題</h2>
+            <ul>
+                <li><a href="search.html?p=1lnZuqxrFkku0qcfhe_ugUcH05qh7If1jV_g67WzlgH0">abc
+                        1st～7th<i class="fas fa-link"></i></a></li>
+                <li><a href="search.html?p=1KKASYVhQhsU_Vd10Vt3YKc4u4Y35AxpHMDlobRgUYdQ">公式サンプル<i
+                            class="fas fa-link"></i></a>
+                </li>
+            </ul>
+            <h2>備考</h2>
+            <ul>
+                <li>基本フォーマットは1列目が問題番号、2列目が問題、3列目が答えです。</li>
+                <li>問題番号のみ記入されている列や、問題や答えは書いていないのに違う列に何らかの文字が記入されている、といった列はなくしてください。</li>
+                <li style="color: rgb(200,100,0);">リンク先の画面で問題が表示されない場合、スプレッドシートのファイルが非公開の設定になっていないか確認してください。</li>
+                <li>リンク先の画面のURLを共有することで他の人も同じ問題リストからこの機能を利用することが出来ます。</li>
+            </ul>
+            <h2>Quiz Flasherに対応させたスプレッドシートファイルを作成する方へ</h2>
+            <p>詳しくは<a href="format.html">Quiz Flasher Support Format<i class="fas fa-link"></i></a>をご確認ください</p>
         </div>
         <div id="footer"></div>
     </div>
     <!--Scripts-->
-    <script src="js/quiz.js"></script>
-    <script src="js/modal.js"></script>
     <!-----Firebase Realtime Database settings----->
     <!--These code can use all firebase project.-->
     <!------------------------------------------------------------------------------------------------->

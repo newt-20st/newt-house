@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Quiz Flasher</title>
+    <title>スプレッドシートを計算｜Quiz Flasher</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="robots" content="noindex">
@@ -22,7 +22,7 @@
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
     <meta property="og:url" content="newt-house.web.app/quiz/search.html">
-    <meta property="og:image" content="../img/quiz-flasher-og.png">
+    <meta property="og:image" content="img/quiz-flasher-og.png">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Favicon -->
@@ -47,7 +47,7 @@
     <div id="wrapper">
         <div id="header"></div>
         <div id="main" class="container-xl">
-            <p><a href="../"><i class="fas fa-home"></i>ホーム</a> > <a href="search.html">Quiz Flasher</a> > スプレッドシートの検索
+            <p><a href="../quiz/"><i class="fas fa-home"></i>ホーム</a> > <a href="search.html">スプレッドシートの検索</a>
             </p>
             <h1><i class="fas fa-search"></i>スプレッドシートの検索</h1>
             <p id="ken"></p>
@@ -57,7 +57,7 @@
             <div id="load-d"><span id="load">読込中...</span></div>
             <div id="special">
                 <input type="text" id="url" name="url" placeholder="Type your spreadsheet's URL..." />
-                <button type="button" onclick="search()" id="search"><i class="fas fa-search"></i></button>
+                <button type="button" id="search"><i class="fas fa-search"></i></button>
             </div>
             <div id="result"></div>
             <h2>注目の問題</h2>
@@ -68,12 +68,9 @@
                             class="fas fa-link"></i></a>
                 </li>
             </ul>
-            <h2>このサイトは何？</h2>
-            <p>問題データを入れたGoogleスプレッドシートのファイルから、ランダムに問題を出題するツールです。すべてのシートからランダムに出題させたり、特定のシートの特定の問題のみでランダムに出題させることも出来ます。
-            </p>
             <h2>備考</h2>
             <ul>
-                <li>フォーマットは基本1列目が問題番号、2列目が問題、3列目が答えです。</li>
+                <li>基本フォーマットは1列目が問題番号、2列目が問題、3列目が答えです。</li>
                 <li>問題番号のみ記入されている列や、問題や答えは書いていないのに違う列に何らかの文字が記入されている、といった列はなくしてください。</li>
                 <li style="color: rgb(200,100,0);">リンク先の画面で問題が表示されない場合、スプレッドシートのファイルが非公開の設定になっていないか確認してください。</li>
                 <li>リンク先の画面のURLを共有することで他の人も同じ問題リストからこの機能を利用することが出来ます。</li>

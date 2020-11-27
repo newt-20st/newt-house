@@ -197,7 +197,7 @@ tr td:nth-of-type(3) {
     height: 200%;
     color: white;
     background: black;
-    border-radius: 30px;
+    border-radius: .5em;
     cursor: pointer;
     border: solid 1px black;
     display: flex;
