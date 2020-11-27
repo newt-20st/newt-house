@@ -23,13 +23,24 @@ function getInfo() {
             var data = this.response;
             console.log(data);
             console.log(data[1]);
-            var sheets = '<ul>';
+            var sheets = "";
             for (var i = 0; i < data[2]; i++) {
-                sheets = sheets + '<li><a href="play.html?p=' + data[1] + '&s=' + i + '">' + data[3][i] + '</a> (' + data[4][i] + '問)' + '</a></li><br>';
+                if (data[5][i].length !== 1) {
+                    var tags = "<li>タグ:";
+                    console.log(data[5][i].length);
+                    for (var j = 0; j < data[5][i].length; j++) {
+                        if (data[5][i][j] !== "") {
+                            tags += '<a href="play.html?p=' + data[1] + '&s=' + i + '&tag=' + data[5][i][j] + '">' + data[5][i][j] + '</a>, ';
+                        }
+                    }
+                    tags = tags.slice(0, -2);
+                    tags += "</li>";
+                } else {
+                    var tags = "";
+                }
+                sheets += '<h3>' + data[3][i] + '</h3><ul><li><a href="play.html?p=' + data[1] + '&s=' + i + '">' + data[3][i] + '</a> (' + data[4][i] + '問｜<a href="play.html?p=' + data[1] + '&s=' + i + '&x=simple">シンプル</a>)</li>' + tags + '</ul>';
             }
-            sheets = sheets + '</ul>';
-            var displayText;
-            displayText = '<b>スプレッドシートのID:</b> ' + data[1] + '<br><b>URL:</b><a href="https://docs.google.com/spreadsheets/d/' + data[1] + '" target="_blank">こちら</a><br><b>ファイル名:</b> ' + data[0] + '<br><b>シート数:</b> ' + data[2] + '<br>検索結果が適切な場合は下のリンクをクリックしてください。<br>' + sheets;
+            var displayText = '<b>スプレッドシートのID:</b> ' + data[1] + '<br><b>元データ:</b> <a href="https://docs.google.com/spreadsheets/d/' + data[1] + '" target="_blank">' + data[0] + ' - Google スプレッドシート<i class="fas fa-external-link-alt"></i></a><br><b>ファイル名:</b> ' + data[0] + '<br><b>シート数:</b> ' + data[2] + '<br><br>検索結果が適切な場合は下のリンクをクリックしてください。<br><br>' + sheets;
             document.getElementById('result').innerHTML = displayText;
             document.getElementById('result').style.display = "block";
             document.getElementById('load').style.display = "none";
@@ -64,13 +75,24 @@ function onloadGetInfo() {
             var data = this.response;
             console.log(data);
             console.log(data[1]);
-            var sheets = '<ul>';
+            var sheets = "";
             for (var i = 0; i < data[2]; i++) {
-                sheets = sheets + '<br><li><a href="play.html?p=' + data[1] + '&s=' + i + '">' + data[3][i] + '</a> (' + data[4][i] + '問)' + '</a></li>';
+                if (data[5][i].length !== 1) {
+                    var tags = "<li>タグ:";
+                    console.log(data[5][i].length);
+                    for (var j = 0; j < data[5][i].length; j++) {
+                        if (data[5][i][j] !== "") {
+                            tags += '<a href="play.html?p=' + data[1] + '&s=' + i + '&tag=' + data[5][i][j] + '">' + data[5][i][j] + '</a>, ';
+                        }
+                    }
+                    tags = tags.slice(0, -2);
+                    tags += "</li>";
+                } else {
+                    var tags = "";
+                }
+                sheets += '<h3>' + data[3][i] + '</h3><ul><li><a href="play.html?p=' + data[1] + '&s=' + i + '">' + data[3][i] + '</a> (' + data[4][i] + '問｜<a href="play.html?p=' + data[1] + '&s=' + i + '&x=simple">シンプル</a>)</li>' + tags + '</ul>';
             }
-            sheets = sheets + '</ul>';
-            var displayText;
-            displayText = '<b>スプレッドシートのID:</b> ' + data[1] + '<br><b>元データ:</b> <a href="https://docs.google.com/spreadsheets/d/' + data[1] + '" target="_blank">' + data[0] + ' - Google スプレッドシート<i class="fas fa-external-link-alt"></i></a><br><b>ファイル名:</b> ' + data[0] + '<br><b>シート数:</b> ' + data[2] + '<br><br>検索結果が適切な場合は下のリンクをクリックしてください。allはすべてのシートからランダムに出題します。シンプルを選ぶと問題文の末尾に問題番号が付きません。<br>' + sheets;
+            var displayText = '<b>スプレッドシートのID:</b> ' + data[1] + '<br><b>元データ:</b> <a href="https://docs.google.com/spreadsheets/d/' + data[1] + '" target="_blank">' + data[0] + ' - Google スプレッドシート<i class="fas fa-external-link-alt"></i></a><br><b>ファイル名:</b> ' + data[0] + '<br><b>シート数:</b> ' + data[2] + '<br><br>検索結果が適切な場合は下のリンクをクリックしてください。<br><br>' + sheets;
             document.getElementById('result').innerHTML = displayText;
             document.getElementById('result').style.display = "block";
             document.getElementById('load').style.display = "none";

@@ -24,6 +24,16 @@ function onBtnClick() {
                     var data = JSON.parse(quizDataPre);
                     var h = data.length;
                     var r = Math.floor(Math.random() * (h - 0) + 0);
+                    if (urlParams["tag"]) {
+                        var aaa = true;
+                        while (aaa) {
+                            r = Math.floor(Math.random() * (h - 0) + 0);
+                            console.log(data[r]["tag"]);
+                            if (data[r]["tag"] === urlParams["tag"]) {
+                                var aaa = false;
+                            }
+                        }
+                    }
                     if (urlParams["x"] == "simple") {
                         document.getElementById("quiz").innerHTML = data[r]["q"] + "<span id='qn'>" + data[r]["n"] + "</span>";
                         document.getElementById("qn").style.display = "none";
@@ -54,7 +64,8 @@ function onBtnClick() {
 
 function getData() {
     // open URL
-    const apiUrl = "https://script.google.com/macros/s/AKfycbzOi_ACgcxDldiJ-8kVS5Hxxe8i37O168mubm95taRE7kAZ9a9Q/exec?t=show&p=" + urlParams["p"] + "&s=" + urlParams["s"];
+    const apiUrl = "https://script.google.com/macros/s/AKfycbzOi_ACgcxDldiJ-8kVS5Hxxe8i37O168mubm95taRE7kAZ9a9Q/exec?t=show&p=" + urlParams["p"] + "&s=" + urlParams["s"] + "&tag=" + urlParams["tag"];
+    console.log(apiUrl);
     var request = new XMLHttpRequest();
     request.open('GET', apiUrl, true);
     request.responseType = 'json';
@@ -63,11 +74,23 @@ function getData() {
                 // processing when the response comes back
                 var data = this.response;
                 localStorage.setItem(setName, JSON.stringify(data));
-                var getData = data;
                 var quizDataPre = localStorage.getItem(setName);
                 var data = JSON.parse(quizDataPre);
                 var h = data.length;
                 var r = Math.floor(Math.random() * (h - 0) + 0);
+                console.log(urlParams["tag"]);
+                console.log(data[r]["tag"]);
+                if (urlParams["tag"]) {
+                    var aaa = true;
+                    while (aaa) {
+                        r = Math.floor(Math.random() * (h - 0) + 0);
+                        console.log(data[r]["tag"]);
+                        if (data[r]["tag"] === urlParams["tag"]) {
+                            var aaa = false;
+                        }
+                    }
+                }
+                console.log(r);
                 if (urlParams["x"] == "simple") {
                     document.getElementById("quiz").innerHTML = data[r]["q"] + "<span id='qn'>" + data[r]["n"] + "</span>";
                     document.getElementById("qn").style.display = "none";
@@ -118,6 +141,10 @@ function getInfo() {
         document.getElementById("modalFileSheetNum").innerHTML = urlParams["s"];
         document.getElementById("modalFileSheetName").innerHTML = data[3][urlParams["s"]];
         document.getElementById("modalFileSheetRow").innerHTML = data[4][urlParams["s"]];
+        if (urlParams["tag"]) {
+            document.getElementById("tagName").innerHTML = "<br><b>tag:</b> " + urlParams["tag"];
+            document.getElementById("modalTagName").innerHTML = "<b>タグ：</b> " + urlParams["tag"];
+        }
         document.getElementById("fileUrl").innerHTML = "<a href='https://docs.google.com/spreadsheets/d/" + data[1] + "' target='_blank'>https://docs.google.com/spreadsheets/d/" + data[1] + "<i class='fas fa-external-link-alt'></i></a>";
         document.title = data[0] + "｜Quiz Flasher";
         localStorage.setItem(setInfoName, JSON.stringify(data));
