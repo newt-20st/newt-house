@@ -48,11 +48,11 @@
     <div id="wrapper">
         <div id="header"></div>
         <div id="main" class="container-xl">
-            <h1 id="fileTitle"></h1>
+            <h1 id="fileTitle">ファイル名を取得中...</h1>
             <p><a href="../quiz/"><i class="fas fa-home"></i>Quiz Flasher</a> > <span id="fileName"></span> <span id="fileSheet"></span> <span id="fileSheetRow"></span><span id="tagName"></span>
             </p>
             <p id="intro">
-                ※読み込みに5秒以上かかる場合はもう一度押してください</p>
+                ※読み込みに5秒以上かかる場合はもう一度押してください。キャッシュの削除は右上のハンバーガーメニューから</p>
             <div id="load-d"><span id="load">読込中...</span></div>
             <div type="button" id="btn" onclick="onBtnClick()">答えを見る</div>
             <div id="text">
@@ -79,8 +79,8 @@
                         <b>データ個数(行数):</b> <span id="modalFileSheetRow"></span><br>
                         <b>元データ：</b> <span id="fileUrl"></span><br><span id="modalTagName"></span></p>
                     <h2>キャッシュの削除</h2>
-                    スプレッドシート側でデータの更新が行われた場合はこれをクリックしてください。
-                    <button id="deleateCash" class="btn btn-primary" type="button">キャッシュの削除</button>
+                    スプレッドシート側でデータの更新が行われた場合はこれをクリックしてください。<br>
+                    <button id="deleateCash" class="btn btn-primary" type="button">キャッシュの削除</button><br>
                     <h2>備考</h2>
                     <p>
                         <ul>
@@ -90,6 +90,8 @@
                             </li>
                             <li>リンク先の画面のURLを共有することで他の人も同じ問題リストからこの機能を利用することが出来ます。</li>
                             <li><a href="release.html">リリースノート<i class="fas fa-link"></i></a></li>
+                            <li>機能追加要望や不具合報告は<a href="https://docs.google.com/forms/d/e/1FAIpQLSf1YFywx-KD_1q2QRG8BJlbYAF8cRLlscu92loIvEiNn6k7Sg/viewform" target="_blank">こちらのフォームから<i class="fas fa-external-link-alt"></i></a>。
+                            </li>
                         </ul>
                     </p>
                 </div>

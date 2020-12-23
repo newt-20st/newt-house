@@ -54,7 +54,7 @@
             <p>スプレッドシートのURLを入力してください。検索には数秒かかります。うまく行かない場合はスプレッドシートの共有設定を確認して下さい。<br> スプレッドシートへのリンク：
                 <a href="https://docs.google.com/spreadsheets/" target="_blank">Google スプレッドシート<i
                         class="fas fa-external-link-alt"></i></a></p>
-            <div id="load-d"><span id="load">読込中...</span></div>
+            <div id="load-d"><span id="load">検索中...</span></div>
             <div id="special">
                 <input type="text" id="url" name="url" placeholder="Type your spreadsheet's URL..." />
                 <button type="button" id="search"><i class="fas fa-search"></i></button>
@@ -68,6 +68,7 @@
                             class="fas fa-link"></i></a>
                 </li>
             </ul>
+            <button id="deleateAllCash" class="btn btn-primary" type="button">キャッシュの削除</button>
             <h2>備考</h2>
             <ul>
                 <li>基本フォーマットは1列目が問題番号、2列目が問題、3列目が答えです。</li>
@@ -75,6 +76,8 @@
                 <li>問題番号のみ記入されている列や、問題や答えは書いていないのに違う列に何らかの文字が記入されている、といった列はなくしてください。</li>
                 <li style="color: rgb(200,100,0);">リンク先の画面で問題が表示されない場合、スプレッドシートのファイルが非公開の設定になっていないか確認してください。</li>
                 <li>リンク先の画面のURLを共有することで他の人も同じ問題リストからこの機能を利用することが出来ます。</li>
+                <li>機能追加要望や不具合報告は<a href="https://docs.google.com/forms/d/e/1FAIpQLSf1YFywx-KD_1q2QRG8BJlbYAF8cRLlscu92loIvEiNn6k7Sg/viewform" target="_blank">こちらのフォームから<i class="fas fa-external-link-alt"></i></a>。
+                </li>
             </ul>
             <h2>Quiz Flasherに対応させたスプレッドシートファイルを作成する方へ</h2>
             <p>詳しくは<a href="format.html">Quiz Flasher Support Format<i class="fas fa-link"></i></a>をご確認ください</p>
@@ -83,6 +86,13 @@
     </div>
     <!--Scripts-->
     <script src="js/file-search.js"></script>
+    <script>
+        var d = document.getElementById('deleateAllCash');
+        d.addEventListener('click', () => {
+            localStorage.clear();
+            document.getElementById("deleateAllCash").innerHTML = "削除済み";
+        });
+    </script>
     <!-----Firebase Realtime Database settings----->
     <!--These code can use all firebase project.-->
     <!------------------------------------------------------------------------------------------------->

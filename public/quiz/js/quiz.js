@@ -101,10 +101,12 @@ function getData() {
                 document.getElementById('load').style.display = "none";
                 answer.style.visibility = "hidden";
                 btn.innerHTML = "答えを見る";
+                document.getElementById("deleateCash").innerHTML = "キャッシュを削除";
                 console.log("You have never visited this page");
             } catch (g) {
                 // processing when the response doesn't come back
                 console.log(g);
+                document.getElementById("deleateCash").innerHTML = "キャッシュを削除";
                 if (document.getElementById("fileSheetRow").textContent == "[0]") {
                     document.getElementById('load').style.display = "none";
                     document.getElementById("quiz").innerHTML = "[002]このシートにはデータが存在しません。<a href='/quiz/search.html'>検索ページ</a>から違うシートを選択してください";
@@ -189,4 +191,5 @@ function checkdiv(obj, id) {
 var c = document.getElementById('deleateCash');
 c.addEventListener('click', () => {
     localStorage.removeItem(setName);
+    document.getElementById("deleateCash").innerHTML = "削除済み";
 });

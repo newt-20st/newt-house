@@ -164,6 +164,10 @@ tr td:nth-of-type(3) {
     color: black;
 }
 
+#intro {
+    font-size: .8em;
+}
+
 @keyframes fadeIn {
     /*animetion-nameで設定した値を書く*/
     0% {
