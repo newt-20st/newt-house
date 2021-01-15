@@ -1,0 +1,117 @@
+    body {
+        font-size: 16px;
+        word-break: break-all;
+        font-family: 'M PLUS Rounded 1c', "BIZ UDPGothic", YakuHanJPs, Lato, "Noto Sans JP", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+    }
+    
+    #wrapper {
+        background-image: url("../img/background.webp");
+        background-repeat: repeat-y;
+        background-size: 100% 1500px;
+        min-height: 100vh;
+    }
+    
+    #header {
+        height: clamp(100px, 20vh, 300px);
+        position: relative;
+    }
+    
+    #header div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 0 clamp(20px, 5vw, 100px);
+    }
+    
+    #header div h1 {
+        color: rgb(255 255 255);
+        font-weight: 900;
+        margin: 0px;
+        line-height: 1em;
+        letter-spacing: .1em;
+    }
+    
+    #footer {
+        height: clamp(100px, 20vh, 300px);
+        position: relative;
+        text-align: center;
+    }
+    
+    #footer div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+    
+    #footer div p {
+        color: rgb(255 255 255);
+        font-weight: 400;
+        margin: 0px;
+        line-height: 1em;
+    }
+    
+    #main {
+        background-color: rgb(255 255 255);
+        margin: auto;
+        padding: 1em;
+    }
+    
+    h2 {
+        font-size: 1.8em;
+        line-height: 1.1em;
+        font-weight: 800;
+        border-bottom: solid 5px #00B0FF;
+        margin: .5em 0;
+    }
+    
+    h3 {
+        border-left: solid #00B0FF 10px;
+        font-size: 1.5em;
+        line-height: 1.3em;
+        padding-left: .3em;
+        margin: .5em 0;
+        font-weight: 600;
+    }
+    
+    h4 {
+        font-size: 1.3em;
+        line-height: 1.3em;
+        color: #00B0FF;
+        margin: .3em 0;
+        transition: .5s;
+        font-weight: 600;
+    }
+    
+    a {
+        text-decoration: none;
+        color: rgb(33 150 244);
+        padding: 0 .3em;
+        transition: .5s;
+        border-radius: 3px;
+    }
+    
+    a:hover {
+        text-decoration: none;
+        background: rgb(33 150 244);
+        color: rgb(255 255 255);
+    }
+    
+    ul.check {
+        list-style: none;
+    }
+    
+    ul.check li:before {
+        font-family: FontAwesome;
+        font-weight: 800;
+        content: '\f00c';
+    }
+    
+    @media (min-width: 992px) {
+        #main {
+            border-radius: 25px;
+        }
+    }

@@ -3,10 +3,9 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>にゅーとのへや</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="robots" content="noindex">
+    <title>三角比計算</title>
+
+
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta name="viewport" content="width=device-width">
@@ -16,37 +15,29 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <!--og-->
-    <meta property="og:title" content="にゅーとのへや">
-    <meta property="og:site_name" content="にゅーとのへや">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-    <meta name="twitter:card" content="summary_large_image">
-
-
     <!-- Favicon -->
-    <link rel="icon" href="../img/favicon.ico">
+    <link rel="icon" href="../assets/img/favicon.ico">
 
-    <!-- ===Web Font=== -->
-    <!-- Noto Sans JP / Noto Serif JP （ライセンス：Open Font License） -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Noto+Serif+JP:700|Oswald:400,500|Lato:400,900&amp;subset=japanese" rel="stylesheet">
+    <!--Web Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;400;600;800;900&display=swap" rel="stylesheet">
     <!--Font Awesome-->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <!-- YakuHanJPs（約物半角専用のWebフォント　ライセンス：SIL OFL 1.1） -->
-    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanjp_s.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanmp_s.min.css" rel="stylesheet">
 
     <!--Style Sheets-->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/tool.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/tool.css">
 </head>
 
 <body>
     <div id="wrapper">
-        <div id="header"></div>
-        <div id="main">
+        <div id="header">
+            <div>
+                <h1>TOOL</h1>
+            </div>
+        </div>
+        <div id="main" class="container-lg">
             <h2>sin・cos・tanを計算するツール</h2>
             <p>θの角度：<input id="sctInput" type="range" value="30" min="0" max="360" step="1" oninput="document.getElementById('sctOutput').value=this.value">
                 <output id="sctOutput">30</output><br><button type="button" id="sctStart">計算</button>
@@ -71,13 +62,16 @@
                     </tbody>
                 </table>
             </p>
-            <a href="../" style="display: block;width: fit-content;margin: auto;"><i class="fas fa-home fa-fw"></i>BACK
-                TO TOP</a>
+            <div class="text-center"><a href="../" class="btn btn-outline-primary btn-sm">Back to top</a></div>
         </div>
-        <div id="footer"></div>
+        <div id="footer">
+            <div>
+                <p>Copyright &copy; 2021 newt</p>
+            </div>
+        </div>
     </div>
-    <!--Scripts-->
-    <!--Firebase Realtime Database settings-->
+    <!-----Firebase Realtime Database settings----->
+    <!--These code can use all firebase project.-->
     <!------------------------------------------------------------------------------------------------->
     <script src="/__/firebase/7.23.0/firebase.js"></script>
     <!-- update the version number as needed -->
@@ -108,43 +102,7 @@
         var database = firebase.database();
     </script>
     <!------------------------------------------------------------------------------------------------->
-    <script>
-        var sctStart = document.getElementById('sctStart');
-        sctStart.addEventListener('click', () => {
-            try {
-                const resultErrorArea = document.getElementById("sctResultError");
-                resultErrorArea.innerHTML = "";
-                const angle = document.getElementById("sctInput").value;
-                var sctSinResult = document.getElementById("sctSinResult");
-                var sctCosResult = document.getElementById("sctCosResult");
-                var sctTanResult = document.getElementById("sctTanResult");
-                if (angle == 90) {
-                    var sinResult = Math.sin(angle * (Math.PI / 180));
-                    var cosResult = 0;
-                    var tanResult = "なし";
-                } else if (angle == 180 || angle == 360) {
-                    var sinResult = 0;
-                    var cosResult = Math.cos(angle * (Math.PI / 180));
-                    var tanResult = Math.tan(angle * (Math.PI / 180));
-                } else if (angle == 270) {
-                    var sinResult = Math.sin(angle * (Math.PI / 180));
-                    var cosResult = 0;
-                    var tanResult = Math.tan(angle * (Math.PI / 180));
-                } else {
-                    var sinResult = Math.sin(angle * (Math.PI / 180));
-                    var cosResult = Math.cos(angle * (Math.PI / 180));
-                    var tanResult = Math.tan(angle * (Math.PI / 180));
-                }
-                sctSinResult.innerHTML = sinResult;
-                sctCosResult.innerHTML = cosResult;
-                sctTanResult.innerHTML = tanResult;
-            } catch (e) {
-                const resultErrorArea = document.getElementById("sctResultError");
-                resultErrorArea.innerHTML = "設定の値が正しくありません";
-                console.log(e);
-            }
-        });
-    </script>
+    <script src="../assets/js/tool.js"></script>
 </body>
 
 </html>

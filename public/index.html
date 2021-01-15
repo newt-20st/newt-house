@@ -4,9 +4,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>NEWT house</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="robots" content="noindex">
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta name="viewport" content="width=device-width">
@@ -16,74 +13,63 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <!--og-->
-    <meta property="og:title" content="にゅーとのへや">
-    <meta property="og:site_name" content="にゅーとのへや">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-    <meta name="twitter:card" content="summary_large_image">
-
-
     <!-- Favicon -->
-    <link rel="icon" href="../img/favicon.ico">
+    <link rel="icon" href="assets/img/favicon.ico">
 
-    <!-- ===Web Font=== -->
-    <!-- Noto Sans JP / Noto Serif JP （ライセンス：Open Font License） -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Noto+Serif+JP:700|Oswald:400,500|Lato:400,900&amp;subset=japanese" rel="stylesheet">
+    <!--Web Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;400;600;800;900&display=swap" rel="stylesheet">
     <!--Font Awesome-->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <!-- YakuHanJPs（約物半角専用のWebフォント　ライセンス：SIL OFL 1.1） -->
-    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanjp_s.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanmp_s.min.css" rel="stylesheet">
 
     <!--Style Sheets-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <div id="wrapper">
-        <div id="header"></div>
-        <div id="main" class="container-xl">
-            <h1>NEWT house</h1>
+        <div id="header">
+            <div>
+                <h1>NEWT house</h1>
+            </div>
+        </div>
+        <div id="main" class="container-lg">
+            <div class="d-none">
+                <h2>プロフィール</h2>
+                <dl>
+                    <dt>ハンドルネーム</dt>
+                    <dd>newt / Gecko</dd>
+                    <dt>言語</dt>
+                    <dd>Javascript / Python / C++</dd>
+                </dl>
+            </div>
             <h2>ツール</h2>
-            <div class="card" style="width: 18rem;display:inline-block;">
-                <div class="card-body">
-                    <h5 class="card-title">フラッシュ暗算</h5>
-                    <p class="card-text">連続して表示される数字の和を計算してください
-                    </p>
-                    <a href="tool/flash-number.html" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;display:inline-block;">
-                <div class="card-body">
-                    <h5 class="card-title">三角比計算ツール</h5>
-                    <p class="card-text">θの角度からsin・cos・tanを計算します
-                    </p>
-                    <a href="tool/sincostan.html" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;display:inline-block;">
-                <div class="card-body">
-                    <h5 class="card-title">New Quiz Flasher</h5>
-                    <p class="card-text"><a href="https://script.google.com/macros/s/AKfycby0uoGf4OGDKWBvfDNUERpDD2M7sny83k9Oj9D69RjDTub4E_o/exec" target="_blank">Quiz
-                            Flasher</a>のリメイク版
-                    </p>
-                    <a href="quiz/" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+            <h3>フラッシュ暗算</h3>
+            <p>連続して表示される数字の和を計算してください</p>
+            <a href="tool/flash-number.html" class="btn btn-outline-primary btn-sm">Go somewhere</a>
+            <h3>三角比計算ツール</h3>
+            <p>θの角度からsin・cos・tanを計算します</p>
+            <a href="tool/sincostan.html" class="btn btn-outline-primary btn-sm">Go somewhere</a>
+            <h3>New Quiz Flasher</h3>
+            <p><a href="https://script.google.com/macros/s/AKfycby0uoGf4OGDKWBvfDNUERpDD2M7sny83k9Oj9D69RjDTub4E_o/exec" target="_blank">Quiz
+                    Flasher</a>のリメイク版
+            </p>
+            <a href="quiz/" class="btn btn-outline-primary btn-sm">Go somewhere</a>
             <h2>その他の作品</h2>
-            <h4>Quiz Flasher</h4>
+            <h3>Quiz Flasher</h3>
             <p>URL: <a href="https://script.google.com/macros/s/AKfycby0uoGf4OGDKWBvfDNUERpDD2M7sny83k9Oj9D69RjDTub4E_o/exec" target="_blank">https://script.google.com/macros/s/AKfycby0uoGf4OGDKWBvfDNUERpDD2M7sny83k9Oj9D69RjDTub4E_o/exec</a>
             </p>
             <p>スプレッドシートのURLを入力するだけでランダムにクイズを出題してくれるツール。画像の入った問題にも対応。
             </p>
             <h2>お問い合わせ</h2>
-            <p style="display:none;">Twitter: <a href="https://twitter.com/newt_20st" target="_blank" class="link">@newt_20st</a></p>
+            <p>Twitter: <a href="https://twitter.com/Gecko_st21" target="_blank" class="link">@Gecko_st21</a></p>
         </div>
-        <div id="footer"></div>
+        <div id="footer">
+            <div>
+                <p>Copyright &copy; 2021 newt</p>
+            </div>
+        </div>
     </div>
     <!-----Firebase Realtime Database settings----->
     <!--These code can use all firebase project.-->
@@ -117,32 +103,6 @@
         var database = firebase.database();
     </script>
     <!------------------------------------------------------------------------------------------------->
-    <script>
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                user.updateProfile({
-                    photoURL: "https://example.com/jane-q-user/profile.jpg"
-                }).then(function() {
-                    // Update successful.
-                    // User is signed in.
-                    var displayName = user.displayName;
-                    var email = user.email;
-                    var emailVerified = user.emailVerified;
-                    var photoURL = user.photoURL;
-                    var isAnonymous = user.isAnonymous;
-                    var uid = user.uid;
-                    var providerData = user.providerData;
-                    console.log(displayName + ',' + email + ',' + photoURL);
-                    // ...,
-                }).catch(function(error) {
-                    // An error happened.
-                    console.log('error');
-                });
-            } else {
-                console.log('User is signed out.');
-            }
-        });
-    </script>
 </body>
 
 </html>

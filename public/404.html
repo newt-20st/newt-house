@@ -3,10 +3,9 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>にゅーとのへや</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="robots" content="noindex">
+    <title>NEWT house</title>
+
+
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta name="viewport" content="width=device-width">
@@ -16,102 +15,40 @@
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <!--og-->
-    <meta property="og:title" content="にゅーとのへや">
-    <meta property="og:site_name" content="にゅーとのへや">
-    <meta property="og:description" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-    <meta name="twitter:card" content="summary_large_image">
-
-
     <!-- Favicon -->
-    <link rel="icon" href="../img/favicon.ico">
+    <link rel="icon" href="assets/img/favicon.ico">
 
-    <!-- ===Web Font=== -->
-    <!-- Noto Sans JP / Noto Serif JP （ライセンス：Open Font License） -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Noto+Serif+JP:700|Oswald:400,500|Lato:400,900&amp;subset=japanese" rel="stylesheet">
+    <!--Web Font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;400;600;800;900&display=swap" rel="stylesheet">
     <!--Font Awesome-->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <!-- YakuHanJPs（約物半角専用のWebフォント　ライセンス：SIL OFL 1.1） -->
-    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanjp_s.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanmp_s.min.css" rel="stylesheet">
 
     <!--Style Sheets-->
-    <style>
-        body {
-            font-size: 16px;
-            word-break: break-all;
-            font-family: "BIZ UDPGothic", YakuHanJPs, Lato, "Noto Sans JP", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
-        }
-        
-        #main {
-            margin: auto;
-            padding: 1em;
-        }
-        
-        h2 {
-            font-size: 1.8em;
-            line-height: 1.1em;
-            font-weight: 800;
-            border-bottom: solid 5px #E5004F;
-            margin: 0px;
-            margin-bottom: .5em;
-        }
-        
-        h3 {
-            background: linear-gradient(to right, rgb(33, 150, 244), rgba(115, 169, 255, 0.5));
-            font-size: 1.5em;
-            line-height: 1.3em;
-            color: rgb(255 255 255);
-            padding-left: .5em;
-            margin-bottom: .3em;
-            transition: .5s;
-        }
-        
-        h4 {
-            border-left: solid #E5004F 10px;
-            font-size: 1.3em;
-            line-height: 1.3em;
-            padding-left: .3em;
-            margin-top: .5em;
-            margin-bottom: 0;
-        }
-        
-        a {
-            text-decoration: none;
-            color: rgb(33 150 244);
-            padding: 0 .3em;
-            transition: .5s;
-            border-radius: 3px;
-        }
-        
-        a:hover {
-            text-decoration: none;
-            background: rgb(33 150 244);
-            color: rgb(255 255 255);
-        }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <div id="wrapper">
-        <div id="header"></div>
-        <div id="main">
-            <h2><span>お探しのページは</span><span>見つかりませんでした</span></h2>
-            <div class="imgClass" style="width: 50%;">
-                <img src="img/404.png">
+        <div id="header">
+            <div>
+                <h1>404 NOT FOUND</h1>
             </div>
-            <p>お探しのページは見つかりませんでした。削除されたか、現在制作中のページの可能性があります。</p>
-            <p class="linkButton"><a href="/" class="a-dere"><span class="a-button">BACK TO TOP</span></a>
-            </p>
         </div>
-        <div id="footer"></div>
+        <div id="main" class="container-lg">
+            <div class="text-center"><img src="assets/img/404.png" class="rounded img-fluid"></div>
+            <p>お探しのページは見つかりませんでした。削除されたか、現在制作中のページである可能性があります。</p>
+            <div class="text-center"><a href="../" class="btn btn-outline-primary btn-sm">Back to top</a></div>
+        </div>
+        <div id="footer">
+            <div>
+                <p>Copyright &copy; 2021 newt</p>
+            </div>
+        </div>
     </div>
-    <!--Scripts-->
-
-    <!--Firebase Realtime Database settings-->
+    <!-----Firebase Realtime Database settings----->
+    <!--These code can use all firebase project.-->
     <!------------------------------------------------------------------------------------------------->
     <script src="/__/firebase/7.23.0/firebase.js"></script>
     <!-- update the version number as needed -->
@@ -143,13 +80,30 @@
     </script>
     <!------------------------------------------------------------------------------------------------->
     <script>
-        function writeUserData() {
-            firebase.database().ref('users/' + "userId").set({
-                username: "name",
-                email: "email",
-                profile_picture: "imageUrl"
-            });
-        }
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                user.updateProfile({
+                    photoURL: "https://example.com/jane-q-user/profile.jpg"
+                }).then(function() {
+                    // Update successful.
+                    // User is signed in.
+                    var displayName = user.displayName;
+                    var email = user.email;
+                    var emailVerified = user.emailVerified;
+                    var photoURL = user.photoURL;
+                    var isAnonymous = user.isAnonymous;
+                    var uid = user.uid;
+                    var providerData = user.providerData;
+                    console.log(displayName + ',' + email + ',' + photoURL);
+                    // ...,
+                }).catch(function(error) {
+                    // An error happened.
+                    console.log('error');
+                });
+            } else {
+                console.log('User is signed out.');
+            }
+        });
     </script>
 </body>
 
