@@ -4,8 +4,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>三角比計算</title>
-
-
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta name="viewport" content="width=device-width">
@@ -25,7 +23,7 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     <!--Style Sheets-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/tool.css">
 </head>
@@ -38,10 +36,16 @@
             </div>
         </div>
         <div id="main" class="container-lg">
-            <h2>sin・cos・tanを計算するツール</h2>
-            <p>θの角度：<input id="sctInput" type="range" value="30" min="0" max="360" step="1" oninput="document.getElementById('sctOutput').value=this.value">
-                <output id="sctOutput">30</output><br><button type="button" id="sctStart">計算</button>
-                <hr>
+            <h2>三角比計算</h2>
+            <form>
+                <div class="form-group">
+                    <label for="sctInputTitle">θの角度</label>
+                    <input type="range" class="form-control" id="sctInput" value="30" min="0" max="360" step="1" oninput="document.getElementById('sctInputHelp').innerHTML=this.value+' / ※1～180'">
+                    <small id="sctInputHelp" class="form-text text-muted">30 / ※1～180</small>
+                </div>
+            </form>
+            <button type="button" id="sctStart" class="btn btn-primary">計算</button>
+            <p>
                 <table>
                     <tbody>
                         <tr>
@@ -102,7 +106,25 @@
         var database = firebase.database();
     </script>
     <!------------------------------------------------------------------------------------------------->
-    <script src="../assets/js/tool.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("sctStart").addEventListener('click', () => {
+            try {
+                const theta = document.getElementById("sctInput").value;
+                var sin = Math.sin(theta);
+                var cos = Math.cos(theta);
+                var tan = Math.tan(theta);
+                if (theta == 90) {
+                    tan = "なし";
+                }
+                document.getElementById("sctSinResult").innerHTML = sin;
+                document.getElementById("sctCosResult").innerHTML = cos;
+                document.getElementById("sctTanResult").innerHTML = tan;
+            } catch (e) {
+                document.getElementById("sctResultError").innerHTML = e;
+            }
+        });
+    </script>
 </body>
 
 </html>

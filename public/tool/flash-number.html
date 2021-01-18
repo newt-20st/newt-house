@@ -4,8 +4,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>フラッシュ暗算</title>
-
-
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta name="viewport" content="width=device-width">
@@ -25,7 +23,7 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     <!--Style Sheets-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/tool.css">
 </head>
@@ -39,30 +37,36 @@
         </div>
         <div id="main" class="container-lg">
             <h2>フラッシュ暗算</h2>
-            <div id="flashSettings">
-                <table id="flashSettingsForm">
-                    <tr>
-                        <td>Speed</td>
-                        <td><input id="flashSpeed" type="range" value="1.0" min="0.3" max="3.0" step="0.1" oninput="document.getElementById('flashSpeedOutput').value=this.value"></td>
-                        <td><output id="flashSpeedOutput">1.0</output></td>
-                    </tr>
-                    <tr>
-                        <td>Low</td>
-                        <td><input type="number" min="1" max="10" id="flashLow" value="2"></td>
-                        <td>※1～10</td>
-                    </tr>
-                    <tr>
-                        <td>Quantity</td>
-                        <td><input type="number" min="1" max="20" id="flashNum" value="5"></td>
-                        <td>※1～20</td>
-                    </tr>
-                </table>
-            </div>
+            <p>
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i
+                        class="fas fa-sliders-h fa-fw"></i>設定</button>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="speedTitle">スピード</label>
+                                <input type="range" class="form-control" id="flashSpeed" value=1.0 min=0.3 max=3.0 step=0.1 oninput="document.getElementById('speedHelp').innerHTML=this.value+' / ※0.3～3.0'">
+                                <small id="speedHelp" class="form-text text-muted">1.0 / ※0.3～3.0</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="lowTitle">桁数</label>
+                                <input type="range" class="form-control" id="flashLow" value="2" min=1 max=20 step=1 oninput="document.getElementById('lowHelp').innerHTML=this.value+' / ※1～20'">
+                                <small id="lowHelp" class="form-text text-muted">2 / ※1～20</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="numTitle">個数</label>
+                                <input type="range" class="form-control" id="flashNum" value="5" min="1" max="20" oninput="document.getElementById('numHelp').innerHTML=this.value+' / ※1～20'">
+                                <small id="numHelp" class="form-text text-muted">2 / ※1～20</small>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </p>
             <p class="flashNumberP">
-                <button type="button" id="flashStart">スタート</button>
+                <button type="button" id="flashStart" class="btn btn-primary">スタート</button>
                 <div id="flashInputArea"></div>
             </p>
-            <p class="flashNumberP"><button type="button" id="flashAnswer">答え</button>
+            <p class="flashNumberP"><button type="button" id="flashAnswer" class="btn btn-primary">答え</button>
                 <div id="flashResultAreaCover">
                     <div id="flashResultArea"></div>
                 </div>
@@ -107,7 +111,45 @@
         var database = firebase.database();
     </script>
     <!------------------------------------------------------------------------------------------------->
-    <script src="../assets/js/tool.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('flashStart').addEventListener('click', () => {
+            document.getElementById("flashResultArea").style.display = "none";
+            document.getElementById("flashStart").disabled = true;
+            document.getElementById("flashAnswer").disabled = true;
+            const speed = document.getElementById("flashSpeed").value;
+            const low = document.getElementById("flashLow").value;
+            const num = document.getElementById("flashNum").value;
+            let totalNum = 0;
+            let totalText = "[";
+            var i = 0;
+            var setIV = setInterval(function() {
+                var min = Math.ceil(Math.pow(10, low - 1));
+                var max = Math.floor(Math.pow(10, low));
+                var displayNum = Math.floor(Math.random() * (max - min) + min);
+                document.getElementById("flashInputArea").innerHTML = displayNum;
+                totalNum += displayNum;
+                totalText += displayNum + ",";
+                if (i < num) {
+                    i++;
+                } else {
+                    totalNum -= displayNum;
+                    totalText = totalText.slice(0, -(Number(low) + 2));
+                    totalText += "]";
+                    document.getElementById("flashInputArea").innerHTML = "";
+                    document.getElementById("flashResultArea").innerHTML = "<b>" + totalNum + "</b> " + totalText;
+                    document.getElementById("flashStart").disabled = false;
+                    document.getElementById("flashAnswer").disabled = false;
+                    clearInterval(setIV);
+                }
+            }, 1000 * speed);
+        });
+        document.getElementById('flashAnswer').addEventListener('click', () => {
+            document.getElementById("flashResultArea").style.display = "block";
+            document.getElementById("flashAnswer").disabled = true;
+            document.getElementById("flashStart").disabled = false;
+        });
+    </script>
 </body>
 
 </html>

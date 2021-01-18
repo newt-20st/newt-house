@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>NEWT house</title>
+    <title>フラッシュ暗算</title>
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta name="viewport" content="width=device-width">
@@ -14,7 +14,7 @@
     <meta http-equiv="Expires" content="0">
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="icon" href="../assets/img/favicon.ico">
 
     <!--Web Font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -24,42 +24,20 @@
 
     <!--Style Sheets-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/tool.css">
 </head>
 
 <body>
     <div id="wrapper">
         <div id="header">
             <div>
-                <h1>NEWT <wbr>house</h1>
+                <h1>OWNER</h1>
             </div>
         </div>
         <div id="main" class="container-lg">
-            <h2>ツール</h2>
-            <h3>フラッシュ暗算</h3>
-            <p>連続して表示される数字の和を計算してください</p>
-            <a href="tool/flash-number.html" class="btn btn-outline-primary btn-sm">Go somewhere</a>
-            <h3>三角比計算</h3>
-            <p>θの角度からsin・cos・tanを計算します</p>
-            <a href="tool/sincostan.html" class="btn btn-outline-primary btn-sm">Go somewhere</a>
-            <h3>New Quiz Flasher</h3>
-            <p><a href="https://script.google.com/macros/s/AKfycby0uoGf4OGDKWBvfDNUERpDD2M7sny83k9Oj9D69RjDTub4E_o/exec" target="_blank">Quiz
-                    Flasher<i class="fas fa-external-link-alt"></i></a>のリメイク版
-            </p>
-            <a href="quiz/" class="btn btn-outline-primary btn-sm">Go somewhere</a>
-            <h3>プロセカユーザー数推移</h3>
-            <p>プロセカのイベントの参加者数からわかるアクティブユーザー数の推移をグラフにしたもの</p>
-            <a href="pj-sekai/chart.html" class="btn btn-outline-primary btn-sm">Go somewhere</a>
-            <h2>その他の作品</h2>
-            <h3>Quiz Flasher</h3>
-            <p>URL: <a href="https://script.google.com/macros/s/AKfycby0uoGf4OGDKWBvfDNUERpDD2M7sny83k9Oj9D69RjDTub4E_o/exec" target="_blank">https://script.google.com/macros/s/AKfycby0uoGf4OGDKWBvfDNUERpDD2M7sny83k9Oj9D69RjDTub4E_o/exec<i
-                        class="fas fa-external-link-alt"></i></a>
-            </p>
-            <p>スプレッドシートのURLを入力するだけでランダムにクイズを出題してくれるツール。画像の入った問題にも対応。
-            </p>
-            <h2>お問い合わせ</h2>
-            <p>Twitter: <a href="https://twitter.com/Gecko_st21" target="_blank" class="link">@Gecko_st21<i
-                        class="fas fa-external-link-alt"></i></a></p>
+            <h2>プロセカ</h2>
+            <div class="text-center"><a href="../" class="btn btn-outline-primary btn-sm">Back to top</a></div>
         </div>
         <div id="footer">
             <div>
@@ -96,11 +74,11 @@
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
         // Get a reference to the database service
-        var database = firebase.database();
+        var database = firebase.firestore();
     </script>
     <!------------------------------------------------------------------------------------------------->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 </body>
 
 </html>

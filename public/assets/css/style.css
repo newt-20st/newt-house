@@ -12,7 +12,7 @@
     }
     
     #header {
-        height: clamp(100px, 20vh, 300px);
+        height: clamp(100px, 10vh, 300px);
         position: relative;
     }
     
@@ -31,10 +31,11 @@
         margin: 0px;
         line-height: 1em;
         letter-spacing: .1em;
+        white-space: nowrap;
     }
     
     #footer {
-        height: clamp(100px, 20vh, 300px);
+        height: clamp(100px, 15vh, 300px);
         position: relative;
         text-align: center;
     }

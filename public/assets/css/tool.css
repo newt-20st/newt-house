@@ -36,42 +36,16 @@
 
 #flashStart,
 #flashAnswer {
-    border: 1px solid black;
     padding: 0.3em 1em;
-    transition: all .5s;
     border-radius: 5px;
     margin: .5em 0;
-}
-
-#flashStart:hover,
-#flashAnswer:hover {
-    opacity: .5;
-}
-
-#flashSettings {
-    font-size: 1.5em;
-}
-
-#flashLow,
-#flashNum {
-    font-size: .8em;
-    width: 90%;
-    font-family: 'YakuHanJPs';
-    padding: 0 0 0 5%;
-}
-
-#flashSettingsForm tr td:nth-of-type(1) {
-    padding: 0 .5em;
-    border-bottom: 1px solid rgb(128 128 128);
 }
 
 
 /* sincostan.html */
 
 #sctStart {
-    border: 1px solid black;
     padding: 0.3em 1em;
-    transition: all .5s;
     border-radius: 5px;
     margin: .5em 0;
 }

@@ -1,0 +1,31 @@
+.table-responsive td {
+    white-space: nowrap;
+}
+
+#pjsekai-activeuser {
+    max-height: 500px;
+}
+
+@media screen and (max-width: 575px) {
+    .table-responsive {
+        border: 1px solid #eee;
+    }
+    .table-responsive::before {
+        font-size: 12px;
+        display: block;
+        padding: 5px 5px 5px 15px;
+        content: ‘表は左右にスクロールできます’;
+        color: #999;
+    }
+    .table-responsive::-webkit-scrollbar {
+        height: 5px;
+    }
+    .table-responsive::-webkit-scrollbar-track {
+        border-radius: 5px;
+        background: #eee;
+    }
+    .table-responsive::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: #666;
+    }
+}
