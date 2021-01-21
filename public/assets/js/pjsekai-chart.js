@@ -69,10 +69,10 @@ getMarker().then(value => {
             data += "</td><td>";
             data += value[i].user;
             data += "</td><td>";
-            data += moment(value[i].start).format("YY/MM/DD") + " ~ " + moment(value[i].end).format("YY/MM/DD");
+            data += moment(value[i].start).format("MM/DD") + " ~ " + moment(value[i].end).format("MM/DD");
             data += "</td></tr>";
             try {
-                label = moment(value[i].start).format("YY/MM/DD") + " ~ " + moment(value[i].end).format("YY/MM/DD");
+                label = moment(value[i].start).format("MM/DD") + " ~ " + moment(value[i].end).format("MM/DD");
             } catch (e) {
                 label = e;
             }
