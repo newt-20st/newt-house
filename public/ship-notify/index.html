@@ -37,15 +37,16 @@
         </div>
         <div id="main" class="container-lg">
             <small><i class="far fa-clock fa-fw"></i>最終更新: <time>2021-01-26</time></small>
-            <h2>これは何？</h2>
+            <h2 id="readme">これは何？</h2>
             <p>SHIP ( Sakae Higashi Internet Program : <a href="https://ship.sakae-higashi.jp/" target="_blank">SHIPトップ<i class="fas fa-external-link-alt fa-fw"></i></a> ) の更新を取得し、LINE公式アカウントから通知するシステム( bot )です。友だち追加は下のボタンかQRコードからできます。
             </p>
             <p>
                 <a href="https://lin.ee/QgNgxFt" style="background-color: rgb(255, 255, 255);"><img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0"></a>
             </p>
+            <p>現在は5時、12時、17時、22時に取得しています。</p>
             <img src="../assets/img/ship-notify-line-qr.png" class="img-fluid img-thumbnail" alt="ship-notify-line-qrcode">
-            <h2>仕様</h2>
-            <h3>制約など</h3>
+            <h2 id="specification">仕様</h2>
+            <h3 id="Ccnstraint">制約など</h3>
             <ul class="list-group">
                 <li class="list-group-item">LINE Messaging APIのフリープランの制約上1ヶ月に送れるプッシュメッセージ・ブロードキャストメッセージは1000通までです。自発的に何も送ってこなくなったなと思ったらそういうことなんだなと思っておいてください。ただし、リプライメッセージはカウント外なので
                     <code>!connection</code>コマンドや<code>!study</code>コマンドを送れば最後にSHIPから取得した時のデータをみることができます。
@@ -57,7 +58,7 @@
                     メッセージを送信したタイミングによってはレスポンスに数十秒ほどかかる場合があります。</li>
                 <li class="list-group-item">複数人のトークルームやグループチャットでの動作は検証しておりません。</li>
             </ul>
-            <h3>コマンド一覧</h3>
+            <h3 id="command-list">コマンド一覧</h3>
             <ul class="list-group">
                 <li class="list-group-item">
                     <h5>
@@ -105,22 +106,22 @@
                     <h5>
                         <pre><code>!notify-all</code></pre>
                     </h5>
-                    <p>すべての通知をオンにします</p>
+                    <p>すべての通知をオンにします。SHIPを取得するたびに通知します。その他、細かな報告などについても通知することがあります</p>
                 </li>
                 <li class="list-group-item">
                     <h5>
                         <pre><code>!notify-middle</code></pre>
                     </h5>
-                    <p>通知の量を減らします</p>
+                    <p>通知の量を減らします。SHIPに更新がなかった際の通知は3日に一度ほどになります。大きな機能追加・改善などのプッシュメッセージの送信なども行います</p>
                 </li>
                 <li class="list-group-item">
                     <h5>
                         <pre><code>!notify-few</code></pre>
                     </h5>
-                    <p>通知を最低限にします</p>
+                    <p>通知を最低限にします。SHIPに更新があったときのみ通知します</p>
                 </li>
             </ul>
-            <h2>技術的仕様</h2>
+            <h2 id="technical-specification">技術的仕様</h2>
             <dl class="dl-horizontal">
                 <dt>使用言語</dt>
                 <dd>Python</dd>
@@ -134,7 +135,7 @@
                 <dd><a href="https://github.com/newt-20st/SHIP-notify-public" target="_blank">https://github.com/newt-20st/SHIP-notify-public<i
                             class="fas fa-external-link-alt fa-fw"></i></a></dd>
             </dl>
-            <h2>利用規約とプライバシーポリシー的なもの</h2>
+            <h2 id="teams-and-policy">利用規約とプライバシーポリシー的なもの</h2>
             <ul class="list-group">
                 <li class="list-group-item">当botはユーザーから運用にあたって必要なデータ(LINEユーザーIDなど)を取得します。</li>
                 <li class="list-group-item">運用者はユーザーが当botを利用したことによって生じたいかなる責任も負いません。すべて自己責任でご利用ください。</li>
