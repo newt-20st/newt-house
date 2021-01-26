@@ -36,7 +36,7 @@
             </div>
         </div>
         <div id="main" class="container-lg">
-            <small><i class="far fa-clock fa-fw"></i>最終更新: <time>2021-01-24</time></small>
+            <small><i class="far fa-clock fa-fw"></i>最終更新: <time>2021-01-26</time></small>
             <h2>これは何？</h2>
             <p>SHIP ( Sakae Higashi Internet Program : <a href="https://ship.sakae-higashi.jp/" target="_blank">SHIPトップ<i class="fas fa-external-link-alt fa-fw"></i></a> ) の更新を取得し、LINE公式アカウントから通知するシステム( bot )です。友だち追加は下のボタンかQRコードからできます。
             </p>
@@ -55,6 +55,7 @@
                     このbotで取得できる更新は「連絡事項」や「学習教材」トップの新着情報の更新のみです。すでに上がっているファイルがあげ直したりされたかどうかなどについては取得していません。</li>
                 <li class="list-group-item">
                     メッセージを送信したタイミングによってはレスポンスに数十秒ほどかかる場合があります。</li>
+                <li class="list-group-item">複数人のトークルームやグループチャットでの動作は検証しておりません。</li>
             </ul>
             <h3>コマンド一覧</h3>
             <ul class="list-group">
@@ -102,15 +103,21 @@
                 </li>
                 <li class="list-group-item">
                     <h5>
-                        <pre><code>!not-change-notify-off</code></pre>
+                        <pre><code>!notify-all</code></pre>
                     </h5>
-                    <p>SHIPに更新がなかった際の通知をオフにします</p>
+                    <p>すべての通知をオンにします</p>
                 </li>
                 <li class="list-group-item">
                     <h5>
-                        <pre><code>!not-change-notify-on</code></pre>
+                        <pre><code>!notify-middle</code></pre>
                     </h5>
-                    <p>SHIPに更新がなかった際の通知をオンにします</p>
+                    <p>通知の量を減らします</p>
+                </li>
+                <li class="list-group-item">
+                    <h5>
+                        <pre><code>!notify-few</code></pre>
+                    </h5>
+                    <p>通知を最低限にします</p>
                 </li>
             </ul>
             <h2>技術的仕様</h2>
