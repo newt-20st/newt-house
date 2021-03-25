@@ -38,7 +38,10 @@
             </div>
         </div>
         <div id="main" class="container-lg">
-            <small><i class="far fa-clock fa-fw"></i>最終更新: <time>2021/02/07</time></small>
+            <div class="alert alert-warning" role="alert">
+                LINE版のサポートは近いうちに終了する予定です。今後は<a href="discord.html" class="alert-link">Discord版</a>の利用を推奨します。
+            </div>
+            <small><i class="far fa-clock fa-fw"></i>最終更新: <time>2021/03/25</time></small>
             <h2 id="readme">これは何？</h2>
             <p>SHIP ( Sakae Higashi Internet Program : <a href="https://ship.sakae-higashi.jp/"
                     target="_blank">SHIPトップ<i class="fas fa-external-link-alt fa-fw"></i></a> )
@@ -56,33 +59,48 @@
             <h2 id="specification">仕様</h3>
                 <ul class="list-group">
                     <li class="list-group-item">SHIPの更新を検知し、LINEで通知するシステムです。</li>
-                    <li class="list-group-item">現在1日に2回取得しています(12時、22時)。</li>
-                    <li class="list-group-item"><b>23時から5時の間はサーバーが寝ているため、返信に30秒～1分ほどかかる場合があります。</b></li>
-                    <li class="list-group-item">1日に取得する回数や取得するタイミング、サーバーを起こしておく時間帯は変更する場合があります。</li>
                     <li class="list-group-item">LINE Messaging
-                        APIのフリープランの制約上、1ヶ月に送れるプッシュメッセージ・マルチキャストメッセージ・ブロードキャストメッセージの合計は1000通までです。1000通を超えた場合、その月はそれ以降プッシュメッセージが送られなくなります。
-                        <br>リプライメッセージはカウントの対象外なので、<code>!study</code>コマンドや<code>!connection</code>コマンドを利用してください。
+                        APIフリープランの制約上、1ヶ月に送れるプッシュメッセージ・マルチキャストメッセージ・ブロードキャストメッセージの合計は1000通までです。1000通を超えた場合、その月はそれ以降プッシュメッセージが送られなくなります。
                     </li>
-                    <li class="list-group-item"></li>
-                    <li class="list-group-item">このbotは現在中学のページのみ取得しています。高校のページのデータは取得していません。<br>※4月までに高校のページにも対応予定です。
+                    <li class="list-group-item">このbotは高校のページの更新のみ通知します。
                     </li>
                     <li class="list-group-item">
                         このbotで取得できる更新は「連絡事項」や「学習教材」トップの新着情報の更新のみです。すでに上がっているファイルがあげ直したりされたかどうかなどについては取得していません。</li>
-                    <li class="list-group-item">
-                        メッセージを送信したタイミングによってはレスポンスに数十秒ほどかかる場合があります。</li>
                     <li class="list-group-item">複数人のトークルームやグループチャットでの動作は検証しておりません。</li>
                 </ul>
                 <h2 id="release-note">リリースノート</h2>
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
-                        <h3 class="accordion-header" id="headingOne"
+                        <h3 class="accordion-header" id="heading2"
                             style="border-left: 0px;font-size: 1em;line-height: 1em;padding-left: 0px;margin: 0px;">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                2020.03.25
+                            </button>
+                        </h3>
+                        <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="heading2"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <h4>規模縮小のお知らせ</h4>
+                                <p>SHIP-notify LINE公式アカウント版は4月以降機能を縮小します。具体的には「高校連絡事項」「高校学習教材」のページのみ通知し、コマンドを全て廃止します。
+                                </p>
+                                <p>代替ツールとしてDiscordのサーバーとして<a href="discord.html">SHIP
+                                        Info</a>を提供中です。このサーバーでは中学、高校それぞれの「連絡事項」「学習教材」の更新の通知だけでなく「<a
+                                        href="http://www.sakaehigashi.ed.jp/news/"
+                                        target="_blank">栄東ニュース</a>」の更新通知、ファイルを直接ダウンロードする機能など(※高校のページのみ)があります。お気軽にご参加ください。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading1"
+                            style="border-left: 0px;font-size: 1em;line-height: 1em;padding-left: 0px;margin: 0px;">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
                                 2020.02.01
                             </button>
                         </h3>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
                             data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <h4>機能追加</h4>
@@ -104,72 +122,20 @@
                         </div>
                     </div>
                 </div>
-                <h3 id="command-list">コマンド一覧</h3>
+                <h2 id="teams-and-policy">利用規約とプライバシーポリシー的なもの</h2>
                 <ul class="list-group">
+                    <li class="list-group-item">当botはユーザーから運用にあたって必要なデータ(LINEユーザーID、表示名、送信されたメッセージなど)を取得します。</li>
+                    <li class="list-group-item">運用者はユーザーが当botを利用したことによって生じたいかなる責任も負いません。すべて自己責任でご利用ください。</li>
                     <li class="list-group-item">
-                        <h5>
-                            <pre><code>!about</code></pre>
-                        </h5>
-                        <p>このbotについての情報を表示。下のリッチメニューからも送信可能</p>
+                        当botは栄東中学校または栄東高校に関係する方のみ利用可能とします。運用者はユーザーが関係者ではないと判断した場合、サービスの提供を中止させていただきます。
                     </li>
-                    <li class="list-group-item">
-                        <h5>
-                            <pre><code>!issue 不具合内容</code></pre>
-                        </h5>
-                        <p>不具合報告用。機能要望なども受付</p>
+                    <li class="list-group-item">当botに対し不適切なメッセージの送信が繰り返された場合、運用者の判断によってサービスの提供を中止することがあります。
                     </li>
-                    <li class="list-group-item">
-                        <h5>
-                            <pre><code>!connection</code></pre>
-                        </h5>
-                        <p>「連絡事項」ページの最終取得時のデータを表示。下のリッチメニューからも送信可能</p>
-                    </li>
-                    <li class="list-group-item">
-                        <h5>
-                            <pre><code>!study</code></pre>
-                        </h5>
-                        <p>「学習教材」ページの最終取得時のデータを表示。下のリッチメニューからも送信可能</p>
-                    </li>
-                    <li class="list-group-item">
-                        <h5>
-                            <pre><code>!notify-setting</code></pre>
-                        </h5>
-                        <p>通知に関する設定</p>
-                    </li>
-                    <li class="list-group-item">
-                        <h5>
-                            <pre><code>!notify-all</code></pre>
-                        </h5>
-                        <p>すべての通知をオンにします。SHIPを取得するたびに通知します。その他、細かな報告などについても通知することがあります</p>
-                    </li>
-                    <li class="list-group-item">
-                        <h5>
-                            <pre><code>!notify-middle</code></pre>
-                        </h5>
-                        <p>通知の量を減らします。SHIPに更新がなかった際の通知は3日に一度ほどになります。大きな機能追加・改善などのプッシュメッセージの送信なども行います</p>
-                    </li>
-                    <li class="list-group-item">
-                        <h5>
-                            <pre><code>!notify-few</code></pre>
-                        </h5>
-                        <p>通知を最低限にします。SHIPに更新があったときのみ通知します</p>
-                    </li>
+                    <li class="list-group-item">当botは予告なく運用を中止することがあります。予めご了承ください。</li>
+                    <li class="list-group-item">当botで取得した情報は全て当botの機能改善のためのみに使うものとし、第3者へのデータの提供は行いません。</li>
+                    <li class="list-group-item">ユーザーは当botをブロックすることによって当サービスの利用を停止することができます。</li>
                 </ul>
-                <h2 id="technical-specification">技術的仕様</h2>
-                <dl class="dl-horizontal">
-                    <dt>使用言語</dt>
-                    <dd>Python</dd>
-                    <dt>データ取得に使っているライブラリ</dt>
-                    <dd>selenium</dd>
-                    <dt>サーバー</dt>
-                    <dd>heroku</dd>
-                    <dt>データベース</dt>
-                    <dd>Google スプレッドシートを簡易データベースとして利用</dd>
-                    <dt>コード</dt>
-                    <dd><a href="https://github.com/newt-20st/SHIP-notify-public"
-                            target="_blank">https://github.com/newt-20st/SHIP-notify-public<i
-                                class="fas fa-external-link-alt fa-fw"></i></a></dd>
-                </dl>
+                <a class="btn btn-outline-primary" href="../ship-notify/" role="button">戻る</a>
         </div>
         <div id="footer">
             <div>
