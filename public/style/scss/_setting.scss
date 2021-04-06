@@ -1,2 +1,13 @@
 $imagePath: "../../assets/img";
 $baseColor: #03A9F4;
+$whiteColor: #ffffff;
+$breakpoints: (
+  'md': 'screen and (max-width: 960px)',
+  'lg': 'screen and (min-width: 960px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

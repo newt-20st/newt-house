@@ -1,5 +1,9 @@
 @import "setting";
+@import "header";
+@import "button";
+@import "tool";
 
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;800&display=swap');
 body {
     font-size: 16px;
     word-break: break-all;
@@ -14,27 +18,6 @@ body {
     min-height: 100vh;
 }
 
-#header {
-    height: clamp(100px, 10vh, 300px);
-    position: relative;
-    div {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        padding: 0 clamp(20px, 5vw, 100px);
-        h1 {
-            color: #ffffff;
-            font-weight: 900;
-            margin: 0px;
-            line-height: 1em;
-            letter-spacing: .1em;
-            white-space: nowrap;
-        }
-    }
-}
-
 #footer {
     height: clamp(100px, 15vh, 300px);
     position: relative;
@@ -46,7 +29,7 @@ body {
         transform: translate(-50%, -50%);
         width: 100%;
         p {
-            color: rgb(255,255,255);
+            color: $whiteColor;
             font-weight: 400;
             margin: 0px;
             line-height: 1em;
@@ -55,9 +38,19 @@ body {
 }
 
 #main {
-    background-color: rgb(255,255,255);
+    background-color: $whiteColor;
     margin: auto;
     padding: 1em;
+    @include mq(md) {
+        width: 100%;
+    }
+    @include mq(lg) {
+        width: 960px;
+        border-radius: 25px;
+        &.top {
+            border-radius: 0 0 25px 25px;
+        }
+    }
 }
 
 h2 {
@@ -95,7 +88,7 @@ a {
     &:hover {
         text-decoration: none;
         background: $baseColor;
-        color: rgb(255,255,255);
+        color: $whiteColor;
     }
 }
 
@@ -103,14 +96,11 @@ ul.check {
     list-style: none;
 }
 
-ul.check li:before {
+ul.check li::before {
     font-family: FontAwesome;
     font-weight: 800;
     content: '\f00c';
 }
 
-@media (min-width: 992px) {
-    #main {
-        border-radius: 25px;
-    }
-}
+
+

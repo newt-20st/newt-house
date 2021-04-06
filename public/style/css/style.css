@@ -1,21 +1,21 @@
 @charset "UTF-8";
-body {
-  font-size: 16px;
-  word-break: break-all;
-  font-family: 'M PLUS Rounded 1c', "BIZ UDPGothic", YakuHanJPs, Lato, "Noto Sans JP", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
-  scroll-behavior: smooth;
-}
-
-#wrapper {
-  background-image: url("../../assets/img/background.webp");
-  background-repeat: repeat-y;
-  background-size: 100% 1500px;
-  min-height: 100vh;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Recursive:wght@400;800&display=swap");
 #header {
   height: clamp(100px, 10vh, 300px);
+  margin: auto;
   position: relative;
+}
+
+@media screen and (max-width: 960px) {
+  #header {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  #header {
+    width: 960px;
+  }
 }
 
 #header div {
@@ -36,6 +36,74 @@ body {
   white-space: nowrap;
 }
 
+#header.top {
+  background-image: url("../../assets/img/header-fuji.jpg");
+  background-size: 100% auto;
+  background-position: center;
+  height: clamp(200px, 15vh, 500px);
+}
+
+#header.top div {
+  top: 20%;
+}
+
+.nh-btn {
+  font-family: 'Recursive', sans-serif;
+  transition: .5s;
+  display: block;
+  font-size: 1.5em;
+  cursor: pointer;
+  border: solid 3px #03A9F4;
+  border-radius: 10px;
+  width: 100px;
+  text-align: center;
+}
+
+.nh-btn padding {
+  top: .5em;
+  bottom: .5em;
+  left: 1em;
+  right: 1em;
+}
+
+.nh-btn.nh-back::before {
+  font-family: "Font Awesome 5 Free";
+  content: '\f359';
+  font-weight: 800;
+}
+
+.nh-btn.nh-go {
+  margin: 0 0 0 auto;
+}
+
+.nh-btn.nh-go::after {
+  font-family: "Font Awesome 5 Free";
+  content: '\f35a';
+  font-weight: 800;
+}
+
+.nh-btn.nh-center {
+  margin: auto;
+}
+
+.nh-topspace {
+  margin-top: 1em;
+}
+
+body {
+  font-size: 16px;
+  word-break: break-all;
+  font-family: 'M PLUS Rounded 1c', "BIZ UDPGothic", YakuHanJPs, Lato, "Noto Sans JP", "ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  scroll-behavior: smooth;
+}
+
+#wrapper {
+  background-image: url("../../assets/img/background.webp");
+  background-repeat: repeat-y;
+  background-size: 100% 1500px;
+  min-height: 100vh;
+}
+
 #footer {
   height: clamp(100px, 15vh, 300px);
   position: relative;
@@ -51,16 +119,32 @@ body {
 }
 
 #footer div p {
-  color: white;
+  color: #ffffff;
   font-weight: 400;
   margin: 0px;
   line-height: 1em;
 }
 
 #main {
-  background-color: white;
+  background-color: #ffffff;
   margin: auto;
   padding: 1em;
+}
+
+@media screen and (max-width: 960px) {
+  #main {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  #main {
+    width: 960px;
+    border-radius: 25px;
+  }
+  #main.top {
+    border-radius: 0 0 25px 25px;
+  }
 }
 
 h2 {
@@ -100,21 +184,15 @@ a {
 a:hover {
   text-decoration: none;
   background: #03A9F4;
-  color: white;
+  color: #ffffff;
 }
 
 ul.check {
   list-style: none;
 }
 
-ul.check li:before {
+ul.check li::before {
   font-family: FontAwesome;
   font-weight: 800;
   content: '\f00c';
-}
-
-@media (min-width: 992px) {
-  #main {
-    border-radius: 25px;
-  }
 }

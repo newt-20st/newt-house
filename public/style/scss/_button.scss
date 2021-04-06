@@ -1,0 +1,38 @@
+.nh-btn {
+    font-family: 'Recursive', sans-serif;
+    transition: .5s;
+    display: block;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding {
+        top: .5em;
+        bottom: .5em;
+        left: 1em;
+        right: 1em;
+    }
+    border: solid 3px $baseColor;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    &.nh-back {
+        &::before {
+            font-family: "Font Awesome 5 Free";
+            content: '\f359';
+            font-weight: 800;
+        }
+    }
+    &.nh-go {
+        margin: 0 0 0 auto;
+        &::after {
+            font-family: "Font Awesome 5 Free";
+            content: '\f35a';
+            font-weight: 800;
+        }
+    }
+    &.nh-center {
+        margin: auto;
+    }
+}
+.nh-topspace {
+    margin-top: 1em;
+}
