@@ -18,13 +18,15 @@
 
     <!--Web Font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;400;600;800;900&display=swap"
+        rel="stylesheet">
     <!--Font Awesome-->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     <!--Style Sheets-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/css/style.css">
     <link rel="stylesheet" href="../assets/css/tool.css">
 </head>
 
@@ -38,38 +40,42 @@
         <div id="main" class="container-lg">
             <h2>フラッシュ暗算</h2>
             <p>
-                <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i
+                <button type="button" class="btn btn-primary" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i
                         class="fas fa-sliders-h fa-fw"></i>設定</button>
-                <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="speedTitle">スピード</label>
-                                <input type="range" class="form-control" id="flashSpeed" value=1.0 min=0.3 max=3.0 step=0.1 oninput="document.getElementById('speedHelp').innerHTML=this.value+' / ※0.3～3.0'">
-                                <small id="speedHelp" class="form-text text-muted">1.0 / ※0.3～3.0</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="lowTitle">桁数</label>
-                                <input type="range" class="form-control" id="flashLow" value="2" min=1 max=20 step=1 oninput="document.getElementById('lowHelp').innerHTML=this.value+' / ※1～20'">
-                                <small id="lowHelp" class="form-text text-muted">2 / ※1～20</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="numTitle">個数</label>
-                                <input type="range" class="form-control" id="flashNum" value="5" min="1" max="20" oninput="document.getElementById('numHelp').innerHTML=this.value+' / ※1～20'">
-                                <small id="numHelp" class="form-text text-muted">2 / ※1～20</small>
-                            </div>
-                        </form>
-                    </div>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="speedTitle">スピード</label>
+                            <input type="range" class="form-control" id="flashSpeed" value=1.0 min=0.3 max=3.0 step=0.1
+                                oninput="document.getElementById('speedHelp').innerHTML=this.value+' / ※0.3～3.0'">
+                            <small id="speedHelp" class="form-text text-muted">1.0 / ※0.3～3.0</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="lowTitle">桁数</label>
+                            <input type="range" class="form-control" id="flashLow" value="2" min=1 max=20 step=1
+                                oninput="document.getElementById('lowHelp').innerHTML=this.value+' / ※1～20'">
+                            <small id="lowHelp" class="form-text text-muted">2 / ※1～20</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="numTitle">個数</label>
+                            <input type="range" class="form-control" id="flashNum" value="5" min="1" max="20"
+                                oninput="document.getElementById('numHelp').innerHTML=this.value+' / ※1～20'">
+                            <small id="numHelp" class="form-text text-muted">2 / ※1～20</small>
+                        </div>
+                    </form>
                 </div>
+            </div>
             </p>
             <p class="flashNumberP">
                 <button type="button" id="flashStart" class="btn btn-primary">スタート</button>
-                <div id="flashInputArea"></div>
+            <div id="flashInputArea"></div>
             </p>
             <p class="flashNumberP"><button type="button" id="flashAnswer" class="btn btn-primary">答え</button>
-                <div id="flashResultAreaCover">
-                    <div id="flashResultArea"></div>
-                </div>
+            <div id="flashResultAreaCover">
+                <div id="flashResultArea"></div>
+            </div>
             </p>
             <div class="text-center"><a href="../" class="btn btn-outline-primary btn-sm">Back to top</a></div>
         </div>
@@ -111,7 +117,9 @@
         var database = firebase.database();
     </script>
     <!------------------------------------------------------------------------------------------------->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
     <script>
         document.getElementById('flashStart').addEventListener('click', () => {
             document.getElementById("flashResultArea").style.display = "none";
@@ -123,7 +131,7 @@
             let totalNum = 0;
             let totalText = "[";
             var i = 0;
-            var setIV = setInterval(function() {
+            var setIV = setInterval(function () {
                 var min = Math.ceil(Math.pow(10, low - 1));
                 var max = Math.floor(Math.pow(10, low));
                 var displayNum = Math.floor(Math.random() * (max - min) + min);
