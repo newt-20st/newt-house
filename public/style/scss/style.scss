@@ -2,8 +2,6 @@
 @import "header";
 @import "button";
 @import "tool";
-
-@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@400;800&display=swap');
 body {
     font-size: 16px;
     word-break: break-all;
@@ -102,5 +100,4 @@ ul.check li::before {
     content: '\f00c';
 }
 
-
-
+@import "quiz";

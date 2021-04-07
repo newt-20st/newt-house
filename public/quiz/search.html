@@ -29,7 +29,9 @@
 
     <!-- ===Web Font=== -->
     <!-- Noto Sans JP / Noto Serif JP （ライセンス：Open Font License） -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Noto+Serif+JP:700|Oswald:400,500|Lato:400,900&amp;subset=japanese" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Noto+Serif+JP:700|Oswald:400,500|Lato:400,900&amp;subset=japanese"
+        rel="stylesheet">
     <!--Font Awesome-->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <!-- YakuHanJPs（約物半角専用のWebフォント　ライセンス：SIL OFL 1.1） -->
@@ -37,52 +39,64 @@
     <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanmp_s.min.css" rel="stylesheet">
 
     <!--Style Sheets-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="css/quiz.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/css/style.css">
 </head>
 
-<body onLoad="onloadSearch()">
+<body onLoad="onloadSearch()" class="quiz">
     <div id="wrapper">
-        <div id="header"></div>
-        <div id="main" class="container-xl">
+        <div id="header">
+            <div>
+                <h1>Quiz Flasher</h1>
+            </div>
+        </div>
+        <div id="main">
             <p><a href="../quiz/"><i class="fas fa-home"></i>ホーム</a> > <a href="search.html">スプレッドシートの検索</a>
             </p>
-            <h1><i class="fas fa-search"></i>スプレッドシートの検索</h1>
-            <p id="ken"></p>
-            <p>スプレッドシートのURLを入力してください。検索には数秒かかります。うまく行かない場合はスプレッドシートの共有設定を確認して下さい。<br> スプレッドシートへのリンク：
-                <a href="https://docs.google.com/spreadsheets/" target="_blank">Google スプレッドシート<i
-                        class="fas fa-external-link-alt"></i></a>
-            </p>
-            <div id="load-d"><span id="load">検索中...</span></div>
-            <div id="special">
-                <input type="text" id="url" name="url" placeholder="Type your spreadsheet's URL..." />
-                <button type="button" id="search"><i class="fas fa-search"></i></button>
+            <div class="content">
+                <h2><i class="fas fa-search"></i>スプレッドシートの検索</h2>
+                <p id="ken"></p>
+                <p>スプレッドシートのURLを入力してください。検索には数秒かかります。うまく行かない場合はスプレッドシートの共有設定を確認して下さい。<br> スプレッドシートへのリンク：
+                    <a href="https://docs.google.com/spreadsheets/" target="_blank">Google スプレッドシート<i
+                            class="fas fa-external-link-alt"></i></a>
+                </p>
+                <div id="load-d"><span id="load">検索中...</span></div>
+                <div id="special">
+                    <input type="text" id="url" name="url" placeholder="Type your spreadsheet's URL..." />
+                    <button type="button" id="search"><i class="fas fa-search"></i></button>
+                </div>
+                <div id="result"></div>
+                <h2>注目の問題</h2>
+                <ul>
+                    <li><a href="search.html?p=1lnZuqxrFkku0qcfhe_ugUcH05qh7If1jV_g67WzlgH0">abc
+                            1st～7th<i class="fas fa-link"></i></a></li>
+                    <li><a href="search.html?p=1KKASYVhQhsU_Vd10Vt3YKc4u4Y35AxpHMDlobRgUYdQ">公式サンプル<i
+                                class="fas fa-link"></i></a>
+                    </li>
+                </ul>
+                <button id="deleateAllCash" class="btn btn-primary" type="button">キャッシュの削除</button>
+                <h2>備考</h2>
+                <ul>
+                    <li>基本フォーマットは1列目が問題番号、2列目が問題、3列目が答えです。</li>
+                    <li>4列目の１行目に「タグ」と入力することで4列目をタグとして扱うことができます。</li>
+                    <li>問題番号のみ記入されている列や、問題や答えは書いていないのに違う列に何らかの文字が記入されている、といった列はなくしてください。</li>
+                    <li style="color: rgb(200,100,0);">リンク先の画面で問題が表示されない場合、スプレッドシートのファイルが非公開の設定になっていないか確認してください。</li>
+                    <li>リンク先の画面のURLを共有することで他の人も同じ問題リストからこの機能を利用することが出来ます。</li>
+                    <li>機能追加要望や不具合報告は<a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLSf1YFywx-KD_1q2QRG8BJlbYAF8cRLlscu92loIvEiNn6k7Sg/viewform"
+                            target="_blank">こちらのフォームから<i class="fas fa-external-link-alt"></i></a>。
+                    </li>
+                </ul>
+                <h2>Quiz Flasherに対応させたスプレッドシートファイルを作成する方へ</h2>
+                <p>詳しくは<a href="format.html">Quiz Flasher Support Format<i class="fas fa-link"></i></a>をご確認ください</p>
             </div>
-            <div id="result"></div>
-            <h2>注目の問題</h2>
-            <ul>
-                <li><a href="search.html?p=1lnZuqxrFkku0qcfhe_ugUcH05qh7If1jV_g67WzlgH0">abc
-                        1st～7th<i class="fas fa-link"></i></a></li>
-                <li><a href="search.html?p=1KKASYVhQhsU_Vd10Vt3YKc4u4Y35AxpHMDlobRgUYdQ">公式サンプル<i
-                            class="fas fa-link"></i></a>
-                </li>
-            </ul>
-            <button id="deleateAllCash" class="btn btn-primary" type="button">キャッシュの削除</button>
-            <h2>備考</h2>
-            <ul>
-                <li>基本フォーマットは1列目が問題番号、2列目が問題、3列目が答えです。</li>
-                <li>4列目の１行目に「タグ」と入力することで4列目をタグとして扱うことができます。</li>
-                <li>問題番号のみ記入されている列や、問題や答えは書いていないのに違う列に何らかの文字が記入されている、といった列はなくしてください。</li>
-                <li style="color: rgb(200,100,0);">リンク先の画面で問題が表示されない場合、スプレッドシートのファイルが非公開の設定になっていないか確認してください。</li>
-                <li>リンク先の画面のURLを共有することで他の人も同じ問題リストからこの機能を利用することが出来ます。</li>
-                <li>機能追加要望や不具合報告は<a href="https://docs.google.com/forms/d/e/1FAIpQLSf1YFywx-KD_1q2QRG8BJlbYAF8cRLlscu92loIvEiNn6k7Sg/viewform" target="_blank">こちらのフォームから<i class="fas fa-external-link-alt"></i></a>。
-                </li>
-            </ul>
-            <h2>Quiz Flasherに対応させたスプレッドシートファイルを作成する方へ</h2>
-            <p>詳しくは<a href="format.html">Quiz Flasher Support Format<i class="fas fa-link"></i></a>をご確認ください</p>
         </div>
-        <div id="footer"></div>
+        <div id="footer">
+            <div>
+                <p>Copyright &copy; 2021 newt</p>
+            </div>
+        </div>
     </div>
     <!--Scripts-->
     <script src="js/file-search.js"></script>
@@ -92,37 +106,6 @@
             localStorage.clear();
             document.getElementById("deleateAllCash").innerHTML = "削除済み";
         });
-    </script>
-    <!-----Firebase Realtime Database settings----->
-    <!--These code can use all firebase project.-->
-    <!------------------------------------------------------------------------------------------------->
-    <script src="/__/firebase/7.23.0/firebase.js"></script>
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.23.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.23.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-    <script>
-        // Set the configuration for your app
-        var firebaseConfig = {
-            apiKey: "AIzaSyD7LUc4TBHriYD1QOdB-OQoOu09Lqxh5go",
-            authDomain: "newt-house.firebaseapp.com",
-            databaseURL: "https://newt-house.firebaseio.com",
-            projectId: "newt-house",
-            storageBucket: "newt-house.appspot.com",
-            messagingSenderId: "210434933562",
-            appId: "1:210434933562:web:132d20954df1073c1f4603",
-            measurementId: "G-MFCKT3PG1L"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-        // Get a reference to the database service
-        var database = firebase.firestore();
     </script>
     <!------------------------------------------------------------------------------------------------->
 </body>

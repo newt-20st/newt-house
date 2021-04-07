@@ -6,7 +6,7 @@
 }
 
 #flashInputArea {
-    width: min(70%, 400px);
+    width: clamp(70%, 400px, 80%);
     text-align: center;
     border: 3px solid black;
     line-height: 0;

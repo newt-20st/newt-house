@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;400;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Recursive:wght@400;800&display=swap");
 #header {
   height: clamp(100px, 10vh, 300px);
@@ -88,6 +89,63 @@
 
 .nh-topspace {
   margin-top: 1em;
+}
+
+/* flash-number.html */
+.flashNumberP {
+  text-align: center;
+  margin: auto;
+}
+
+#flashInputArea {
+  width: clamp(70%, 400px, 80%);
+  text-align: center;
+  border: 3px solid black;
+  line-height: 0;
+  padding: 1em 0;
+  border-radius: 5px;
+  margin: .5em auto;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+#flashResultAreaCover {
+  width: 98%;
+  border: 3px solid black;
+  border-radius: 5px;
+  margin: .5em auto;
+  font-size: 1.5em;
+  min-height: 5em;
+}
+
+#flashResultMain {
+  font-weight: 800;
+}
+
+#flashResultArea {
+  margin: 1%;
+}
+
+#flashStart,
+#flashAnswer {
+  padding: 0.3em 1em;
+  border-radius: 5px;
+  margin: .5em 0;
+}
+
+/* sincostan.html */
+#sctStart {
+  padding: 0.3em 1em;
+  border-radius: 5px;
+  margin: .5em 0;
+}
+
+#sctStart:hover {
+  opacity: .5;
+}
+
+#sctInput {
+  width: 100%;
 }
 
 body {
@@ -195,4 +253,335 @@ ul.check li::before {
   font-family: FontAwesome;
   font-weight: 800;
   content: '\f00c';
+}
+
+.quiz body {
+  -webkit-animation: fadeIn 3s ease 1;
+          animation: fadeIn 3s ease 1;
+  overflow-x: hidden;
+}
+
+.quiz p #intro {
+  margin-bottom: 0px;
+  font-size: .5em;
+  line-height: 1.5em;
+}
+
+.quiz img,
+.quiz video,
+.quiz audio {
+  max-width: 400px;
+  width: 100%;
+  height: 40vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  text-align: center;
+  border-radius: .5em;
+  margin: auto;
+  display: block;
+}
+
+.quiz ul {
+  padding-left: 1.5rem;
+}
+
+.quiz .hoge {
+  font-size: 2em;
+}
+
+.quiz tr td:nth-of-type(1) {
+  width: 3vw;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.quiz tr td:nth-of-type(2) {
+  width: 70vw;
+  border-right: gray solid 0.3rem;
+  padding: 0.5vw;
+  font-size: 0.8rem;
+}
+
+.quiz tr td:nth-of-type(3) {
+  width: 25vw;
+  padding: 0.5vw;
+  font-size: 0.8rem;
+}
+
+.quiz #url {
+  min-width: 70%;
+  line-height: 1.5em;
+  border-radius: 1rem;
+  border: #333 1px solid;
+  padding-left: 0.5em;
+  font-size: 1.5em;
+}
+
+.quiz #search {
+  line-height: 1.5em;
+  border-radius: 1rem;
+  border: #333 1px solid;
+  background-color: #fff;
+  color: black;
+  cursor: pointer;
+  max-width: 80%;
+  margin: auto;
+  transition: all 0.5s ease-out 0s;
+  font-size: 1.5em;
+  padding: 0 .5em;
+}
+
+.quiz #search:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.quiz #special {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.quiz #spid {
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  padding-left: 2%;
+  width: 100%;
+}
+
+.quiz #result {
+  margin: 1rem;
+  border: 1px #333 solid;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: none;
+}
+
+.quiz #load-d {
+  height: 1rem;
+  text-align: center;
+  margin: .5em;
+}
+
+.quiz #load {
+  -webkit-animation: fadeIn 0.5s ease 0s infinite alternate;
+          animation: fadeIn 0.5s ease 0s infinite alternate;
+  color: black;
+}
+
+.quiz #intro {
+  font-size: .8em;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.quiz .labelhistory,
+.quiz #history-display-button,
+.quiz #answer-copy-button {
+  cursor: pointer;
+}
+
+.quiz #text {
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.quiz #answer {
+  color: red;
+  font-weight: bold;
+}
+
+.quiz #btn {
+  width: 100%;
+  height: 200%;
+  color: white;
+  background: black;
+  border-radius: .5em;
+  cursor: pointer;
+  border: solid 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-out 0s;
+}
+
+.quiz #btn:hover {
+  opacity: 0.9;
+}
+
+.quiz .after {
+  clear: both;
+  margin-top: 1rem;
+}
+
+.quiz #pick {
+  border: 1px solid black;
+  margin: auto;
+  width: min(80%, 500px);
+  border-radius: 5px;
+  padding: .3em;
+  cursor: pointer;
+}
+
+.quiz #pick,
+.quiz #link {
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 600px) {
+  .quiz .mobileonly {
+    display: none;
+  }
+  .quiz #text {
+    float: right;
+    width: 50%;
+  }
+  .quiz #btn {
+    float: left;
+    width: 48%;
+    margin: auto;
+    height: 45vh;
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .quiz .desktoponly {
+    display: none;
+  }
+  .quiz h1,
+  .quiz #spid {
+    text-align: center;
+    padding: 0px;
+  }
+  .quiz #quiz,
+  .quiz #answer {
+    margin: .5em;
+  }
+  .quiz #btn {
+    padding: .3em 0;
+    font-size: 1.7em;
+  }
+  .quiz #text {
+    min-height: 40vh;
+  }
+  .quiz #pick {
+    font-size: .8em;
+    padding: .3em;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .quiz body {
+    color: #fff;
+    background: #333;
+  }
+  .quiz #btn {
+    border: solid 1px white;
+    background: #333;
+  }
+  .quiz #btn:hover {
+    opacity: 0.5;
+  }
+  .quiz #answer {
+    color: #c86400;
+  }
+  .quiz #copyright {
+    background: #333;
+  }
+  .quiz #search {
+    border: #fff 1px solid;
+    background-color: #333;
+    color: white;
+  }
+  .quiz #search:hover {
+    background-color: #fff;
+    color: black;
+  }
+  .quiz #result {
+    border: 1px #fff solid;
+  }
+  .quiz #load {
+    color: white;
+  }
+  .quiz #pick {
+    border: 1px solid white;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) and (max-width: 600px) {
+  .quiz #btn:active {
+    opacity: 1;
+  }
+  .quiz #btn:hover {
+    opacity: 1;
+  }
+}
+
+.quiz #modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.quiz #modal-content {
+  background-color: white;
+  width: 100%;
+  min-height: 100%;
+  padding: 2%;
+  transition: all 0.3s ease-out 0s;
+  font-size: .8em;
+}
+
+.quiz #modalbtn {
+  position: fixed;
+  top: 2%;
+  right: clamp(25px, calc((100% - 1140px) / 2 - 50px), 1000px);
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  padding: 0.5%;
+  cursor: pointer;
+  transition: all 0.3s ease-out 0s;
+  z-index: 100;
+}
+
+.quiz #modalbtn:hover {
+  opacity: 0.1;
+}
+
+@media screen and (max-width: 600px) {
+  .quiz #modalbtn {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .quiz #modal-content {
+    background-color: #333;
+  }
+  .quiz #modalbtn {
+    background-color: #333;
+  }
 }

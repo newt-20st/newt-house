@@ -29,7 +29,9 @@
 
     <!-- ===Web Font=== -->
     <!-- Noto Sans JP / Noto Serif JP （ライセンス：Open Font License） -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Noto+Serif+JP:700|Oswald:400,500|Lato:400,900&amp;subset=japanese" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900|Noto+Serif+JP:700|Oswald:400,500|Lato:400,900&amp;subset=japanese"
+        rel="stylesheet">
     <!--Font Awesome-->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <!-- YakuHanJPs（約物半角専用のWebフォント　ライセンス：SIL OFL 1.1） -->
@@ -37,18 +39,21 @@
     <link href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.2.0/dist/css/yakuhanmp_s.min.css" rel="stylesheet">
 
     <!--Style Sheets-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="css/quiz.css">
-    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/css/style.css">
 </head>
 
-<body onLoad="onBtnClick()">
+<body onLoad="onBtnClick()" class="quiz">
     <div id="wrapper">
-        <div id="header"></div>
-        <div id="main" class="container-xl">
-            <h1 id="fileTitle">ファイル名を取得中...</h1>
-            <p><a href="../quiz/"><i class="fas fa-home"></i>Quiz Flasher</a> > <span id="fileName"></span> <span id="fileSheet"></span> <span id="fileSheetRow"></span><span id="tagName"></span>
+        <div id="header">
+            <div>
+                <h1 id="fileTitle">ファイル名を取得中...</h1>
+            </div>
+        </div>
+        <div id="main">
+            <p><a href="../quiz/"><i class="fas fa-home"></i>Quiz Flasher</a> > <span id="fileName"></span> <span
+                    id="fileSheet"></span> <span id="fileSheetRow"></span><span id="tagName"></span>
             </p>
             <p id="intro">
                 ※読み込みに5秒以上かかる場合はもう一度押してください。キャッシュの削除は右上のハンバーガーメニューから</p>
@@ -83,56 +88,31 @@
                     <button id="deleateCash" class="btn btn-primary" type="button">キャッシュの削除</button><br>
                     <h2>備考</h2>
                     <p>
-                        <ul>
-                            <li>フォーマットは基本1列目が問題番号、2列目が問題、3列目が答えです。</li>
-                            <li>問題番号のみ記入されている列や、問題や答えは書いていないのに違う列に何らかの文字が記入されている、といった列はなくしてください。</li>
-                            <li style="color: rgb(200,100,0);">リンク先の画面で問題が表示されない場合、スプレッドシートのファイルが非公開の設定になっていないか確認してください。
-                            </li>
-                            <li>リンク先の画面のURLを共有することで他の人も同じ問題リストからこの機能を利用することが出来ます。</li>
-                            <li><a href="release.html">リリースノート<i class="fas fa-link"></i></a></li>
-                            <li>機能追加要望や不具合報告は<a href="https://docs.google.com/forms/d/e/1FAIpQLSf1YFywx-KD_1q2QRG8BJlbYAF8cRLlscu92loIvEiNn6k7Sg/viewform" target="_blank">こちらのフォームから<i class="fas fa-external-link-alt"></i></a>。
-                            </li>
-                        </ul>
+                    <ul>
+                        <li>フォーマットは基本1列目が問題番号、2列目が問題、3列目が答えです。</li>
+                        <li>問題番号のみ記入されている列や、問題や答えは書いていないのに違う列に何らかの文字が記入されている、といった列はなくしてください。</li>
+                        <li style="color: rgb(200,100,0);">リンク先の画面で問題が表示されない場合、スプレッドシートのファイルが非公開の設定になっていないか確認してください。
+                        </li>
+                        <li>リンク先の画面のURLを共有することで他の人も同じ問題リストからこの機能を利用することが出来ます。</li>
+                        <li><a href="release.html">リリースノート<i class="fas fa-link"></i></a></li>
+                        <li>機能追加要望や不具合報告は<a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSf1YFywx-KD_1q2QRG8BJlbYAF8cRLlscu92loIvEiNn6k7Sg/viewform"
+                                target="_blank">こちらのフォームから<i class="fas fa-external-link-alt"></i></a>。
+                        </li>
+                    </ul>
                     </p>
                 </div>
             </div>
         </div>
-        <div id="footer"></div>
+        <div id="footer">
+            <div>
+                <p>Copyright &copy; 2021 newt</p>
+            </div>
+        </div>
     </div>
     <!--Scripts-->
     <script src="js/quiz.js"></script>
     <script src="js/modal.js"></script>
-    <!-----Firebase Realtime Database settings----->
-    <!--These code can use all firebase project.-->
-    <!------------------------------------------------------------------------------------------------->
-    <script src="/__/firebase/7.23.0/firebase.js"></script>
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.23.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.23.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.23.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-    <script>
-        // Set the configuration for your app
-        var firebaseConfig = {
-            apiKey: "AIzaSyD7LUc4TBHriYD1QOdB-OQoOu09Lqxh5go",
-            authDomain: "newt-house.firebaseapp.com",
-            databaseURL: "https://newt-house.firebaseio.com",
-            projectId: "newt-house",
-            storageBucket: "newt-house.appspot.com",
-            messagingSenderId: "210434933562",
-            appId: "1:210434933562:web:132d20954df1073c1f4603",
-            measurementId: "G-MFCKT3PG1L"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-        // Get a reference to the database service
-        var database = firebase.firestore();
-    </script>
     <!------------------------------------------------------------------------------------------------->
 </body>
 
