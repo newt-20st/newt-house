@@ -1,15 +1,15 @@
 {
-    "database": {
-        "rules": "database.rules.json"
-    },
-    "hosting": {
-        "public": "public",
-        "ignore": [
-            "firebase.json",
-            "**/.*",
-            "**/node_modules/**"
-        ]
-    },
-    "cleanUrls": true,
-    "trailingSlash": false
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "cleanUrls": true,
+  "trailingSlash": false
 }
