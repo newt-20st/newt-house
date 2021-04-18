@@ -38,7 +38,7 @@
             </div>
         </div>
         <div id="main" class="container-lg">
-            <small><i class="far fa-clock fa-fw"></i>最終更新: <time>2021/04/06</time></small>
+            <small><i class="far fa-clock fa-fw"></i>最終更新: <time>2021/04/18</time></small>
             <div class="content">
                 <img src="images/shipinfo-th.png" class="img-fluid" alt="SHIP Info" style="border-radius:25px;">
                 <h2 id="readme">SHIP Info</h2>
@@ -51,127 +51,164 @@
                     <li><a href="https://discord.gg/Hn8zQxkDTH" target="_blank">https://discord.gg/Hn8zQxkDTH</a></li>
                 </ul>
                 </p>
-                <h2 id="specification">仕様</h3>
+                <h2 id="specification">仕様</h2>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        サーバー参加時は「エントランス」チャンネルしか見れないと思いますが、メッセージにリアクションを行うことで他のチャンネルや他の参加者を見ることができるようになります。詳しくは「エントランス」チャンネルでの指示に従ってください。また、Discordの使い方がよくわからない方のために<a
+                            href="#tutorial">チュートリアル</a>も載せています。
+                    </li>
+                    <li class="list-group-item">コマンドはbotとのDMでも利用できます。</li>
+                    <li class="list-group-item">
+                        このbotで取得できる更新は「連絡事項」や「学習教材」トップの新着情報の更新のみです。すでに上がっているファイルがあげ直したりされたかどうかなどについては取得していません。</li>
+                    <li class="list-group-item">SHIPへのデータ取得タイミングは「サーバーガイド」チャンネルのメッセージに記載しています。なお栄東ニュースの取得は不定期です。
+                    </li>
+                </ul>
+                <h2 id="release-note">リリースノート</h2>
+                <div class="accordion" id="accordion1">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading6"
+                            style="border-left: 0px;font-size: 1em;line-height: 1em;padding-left: 0px;margin: 0px;">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse6" aria-expanded="true" aria-controls="collapse6">
+                                2020.04.09
+                            </button>
+                        </h3>
+                        <div id="collapse6" class="accordion-collapse collapse show" aria-labelledby="heading6"
+                            data-bs-parent="#accordion6">
+                            <div class="accordion-body">
+                                <h4>変更点</h4>
+                                <p>
+                                <ul>
+                                    <li>sh!file コマンドを使ったときにダウンロードリンクを返す方式からファイルを直接送信する方式に変更しました</li>
+                                    <li>sh!help コマンドでコマンドの一覧を確認できるようになりました</li>
+                                    <li>複数のコマンドを再編しました</li>
+                                    <li>複数のコマンドで省略記法を導入しました</li>
+                                    <li>休みが終わったことに伴い取得時間を変更しました</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading5"
+                            style="border-left: 0px;font-size: 1em;line-height: 1em;padding-left: 0px;margin: 0px;">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+                                2020.04.02
+                            </button>
+                        </h3>
+                        <div id="collapse5" class="accordion-collapse collapse show" aria-labelledby="heading5"
+                            data-bs-parent="#accordion5">
+                            <div class="accordion-body">
+                                <h4>新機能</h4>
+                                <p>NHKで現在放送中の番組を取得する<code>sh!nhk</code>コマンドを追加しました。また小説家になろうの更新情報を通知するチャンネルを作りました。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading4"
+                            style="border-left: 0px;font-size: 1em;line-height: 1em;padding-left: 0px;margin: 0px;">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                                2020.03.20
+                            </button>
+                        </h3>
+                        <div id="collapse4" class="accordion-collapse collapse show" aria-labelledby="heading4"
+                            data-bs-parent="#accordion4">
+                            <div class="accordion-body">
+                                <h4>新機能</h4>
+                                <p>最近の更新を取得する<code>sh!r</code>,<code>sh!recently</code> コマンドと、情報を取得する
+                                    <code>sh!i</code>,
+                                    <code>sh!info</code> コマンドを追加しました。どちらも中学ページのものも取得できます。またDMでの利用も可能です。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading3"
+                            style="border-left: 0px;font-size: 1em;line-height: 1em;padding-left: 0px;margin: 0px;">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                                2020.03.18
+                            </button>
+                        </h3>
+                        <div id="collapse3" class="accordion-collapse collapse show" aria-labelledby="heading3"
+                            data-bs-parent="#accordion3">
+                            <div class="accordion-body">
+                                <h4>ファイルダウンロード機能追加！</h4>
+                                <p>これからはサーバーで新着通知を確認したあとSHIPを開く必要がなくなります！
+                                    <code>sh!search <i>(id)</i></code>
+                                    または<code>sh!s</code>コマンドで、データベースにファイルが保存されている場合そのURLを返します。<br><br>例：
+                                    <code>sh!search 8684</code>
+                                    <br><br>※idは各通知チャンネルに送信される各メッセージに記載されています。今後idを検索する機能も実装予定です。<br>※このコマンドはbotとのDMでも利用できます。<br>※この機能は「高校連絡事項」「高校学習教材」のファイルで利用できます。
+                                </p>
+                                <h4>その他</h4>
+                                <h5>メッセージリンクに反応</h5>
+                                <p>Discordのメッセージリンクが含まれたメッセージにbotが反応し、そのメッセージの内容や画像を返す機能を追加しました。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading2"
+                            style="border-left: 0px;font-size: 1em;line-height: 1em;padding-left: 0px;margin: 0px;">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                2020.03.08
+                            </button>
+                        </h3>
+                        <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="heading2"
+                            data-bs-parent="#accordion2">
+                            <div class="accordion-body">
+                                <h4>Wikipedia検索コマンド追加</h4>
+                                <p>Wikipediaの最初のセクションの文を返します。
+                                    <code>sh!wiki <i>(word)</i></code>コマンドから利用できます。<br><br>例：
+                                    <code>sh!wiki 栄東</code>
+                                    <br><br>※このコマンドはbotとのDMでも利用できます。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header" id="heading1"
+                            style="border-left: 0px;font-size: 1em;line-height: 1em;padding-left: 0px;margin: 0px;">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                2020.03.07
+                            </button>
+                        </h3>
+                        <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
+                            data-bs-parent="#accordion1">
+                            <div class="accordion-body">
+                                <p>Discordのサーバーを開設しました。今後はこちらを主体で開発を行っていきます。</p>
+                                <h4>新機能</h4>
+                                <p>
+                                <ul>
+                                    <li>「高校連絡事項」「高校学習教材」のページの取得</li>
+                                    <li>「栄東ニュース」のページの取得</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 id="tutorial">チュートリアル ～Discordが初めての方へ～</h2>
+                    <p>このセクションでは「アカウントを作ってサーバーに入ったはいいものの使い方がわからない！」という方のために当サーバーの見方や使い方を説明します。</p>
+                    <h3>各場所の名前</h3>
+                    <p>ごめんなさい。これから書きます。そこまで難しくはないと思いますがわからない人は直接聞いてくれれば答えます！！</p>
+                    <h2>ソースコード</h2>
+                    <p>GitHubのリンクを貼っておきたいところなんですが過去のコミットでセキュリティキーを直書きしちゃってるので無理です。要望があればその部分以外なら見せることができるので、同じようなものを作りたいとかがあれば気軽に言ってください！
+                        ちなみにクラウドは Heroku 、ファイルのホスティングは Firebase Strage 、データ取得は selenium を使っています。言語は Python です。</p>
+                    <h2 id="teams-and-policy">利用規約とプライバシーポリシー的なもの</h2>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            サーバー参加時は「エントランス」チャンネルしか見れないと思いますが、メッセージにリアクションを行うことで他のチャンネルや他の参加者を見ることができるようになります。詳しくは「エントランス」チャンネルでの指示に従ってください。
+                            このサーバーは栄東中学校・栄東高校の関係者の方（以下、関係者）であれば誰でも入ることができます。関係者以外の方のサーバーへの参加はご遠慮ください。</li>
+                        <li class="list-group-item">サーバーのオーナー（以下、管理者）はサーバーへの参加者（以下、参加者）に、管理者アカウントもしくはSHIP-assistant
+                            botから本名またはクラスなどの聞き取りを行う場合があります。これは参加者が関係者であるかを確認するためのものです。</li>
+                        <li class="list-group-item">参加者が関係者であることを確認できない場合、管理者は該当する参加者に対しサーバーからの追放やBANを行わせていただくことがあります。
                         </li>
-                        <li class="list-group-item">コマンドはbotとのDMでも利用できます。</li>
-                        <li class="list-group-item">
-                            このbotで取得できる更新は「連絡事項」や「学習教材」トップの新着情報の更新のみです。すでに上がっているファイルがあげ直したりされたかどうかなどについては取得していません。</li>
-                        <li class="list-group-item">SHIPへのデータ取得タイミングは「サーバーガイド」チャンネルのメッセージに記載しています。なお栄東ニュースの取得は不定期です。
-                        </li>
+                        <li class="list-group-item">管理者は提供するサービスを利用したことによって生じた不利益な事柄への責任は一切負わないものとします。</li>
+                        <li class="list-group-item">参加者は管理者に対し、セキュリティーキーなどの設定部分を除く一部または全部のソースコードの開示を要求することができます。</li>
                     </ul>
-                    <h2 id="release-note">リリースノート</h2>
-                    <div class="accordion" id="accordion1">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="heading5"
-                                style="border-left: 0px;font-size: 1em;line-height: 1em;padding-left: 0px;margin: 0px;">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
-                                    2020.04.02
-                                </button>
-                            </h3>
-                            <div id="collapse5" class="accordion-collapse collapse show" aria-labelledby="heading5"
-                                data-bs-parent="#accordion5">
-                                <div class="accordion-body">
-                                    <h4>新機能</h4>
-                                    <p>NHKで現在放送中の番組を取得する<code>sh!nhk</code>コマンドを追加しました。また小説家になろうの更新情報を通知するチャンネルを作りました。
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="heading4"
-                                style="border-left: 0px;font-size: 1em;line-height: 1em;padding-left: 0px;margin: 0px;">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
-                                    2020.03.20
-                                </button>
-                            </h3>
-                            <div id="collapse4" class="accordion-collapse collapse show" aria-labelledby="heading4"
-                                data-bs-parent="#accordion4">
-                                <div class="accordion-body">
-                                    <h4>新機能</h4>
-                                    <p>最近の更新を取得する<code>sh!r</code>,<code>sh!recently</code> コマンドと、情報を取得する
-                                        <code>sh!i</code>
-                                        <code>sh!info</code> コマンドを追加しました。どちらも中学ページのものも取得できます。またDMでの利用も可能です。
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="heading3"
-                                style="border-left: 0px;font-size: 1em;line-height: 1em;padding-left: 0px;margin: 0px;">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
-                                    2020.03.18
-                                </button>
-                            </h3>
-                            <div id="collapse3" class="accordion-collapse collapse show" aria-labelledby="heading3"
-                                data-bs-parent="#accordion3">
-                                <div class="accordion-body">
-                                    <h4>ファイルダウンロード機能追加！</h4>
-                                    <p>これからはサーバーで新着通知を確認したあとSHIPを開く必要がなくなります！
-                                        <code>sh!search <i>(id)</i></code>
-                                        または<code>sh!s</code>コマンドで、データベースにファイルが保存されている場合そのURLを返します。<br><br>例：
-                                        <code>sh!search 8684</code>
-                                        <br><br>※idは各通知チャンネルに送信される各メッセージに記載されています。今後idを検索する機能も実装予定です。<br>※このコマンドはbotとのDMでも利用できます。<br>※この機能は「高校連絡事項」「高校学習教材」のファイルで利用できます。
-                                    </p>
-                                    <h4>その他</h4>
-                                    <h5>メッセージリンクに反応</h5>
-                                    <p>Discordのメッセージリンクが含まれたメッセージにbotが反応し、そのメッセージの内容や画像を返す機能を追加しました。</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="heading2"
-                                style="border-left: 0px;font-size: 1em;line-height: 1em;padding-left: 0px;margin: 0px;">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
-                                    2020.03.08
-                                </button>
-                            </h3>
-                            <div id="collapse2" class="accordion-collapse collapse show" aria-labelledby="heading2"
-                                data-bs-parent="#accordion2">
-                                <div class="accordion-body">
-                                    <h4>Wikipedia検索コマンド追加</h4>
-                                    <p>Wikipediaの最初のセクションの文を返します。
-                                        <code>sh!wiki <i>(word)</i></code>コマンドから利用できます。<br><br>例：
-                                        <code>sh!wiki 栄東</code>
-                                        <br><br>※このコマンドはbotとのDMでも利用できます。
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="heading1"
-                                style="border-left: 0px;font-size: 1em;line-height: 1em;padding-left: 0px;margin: 0px;">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                    2020.03.07
-                                </button>
-                            </h3>
-                            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
-                                data-bs-parent="#accordion1">
-                                <div class="accordion-body">
-                                    <p>Discordのサーバーを開設しました。今後はこちらを主体で開発を行っていきます。</p>
-                                    <h4>新機能</h4>
-                                    <p>
-                                    <ul>
-                                        <li>「高校連絡事項」「高校学習教材」のページの取得</li>
-                                        <li>「栄東ニュース」のページの取得</li>
-                                    </ul>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <h2 id="teams-and-policy">利用規約とプライバシーポリシー的なもの</h2>
-                        <ul class="list-group">
-                            <li class="list-group-item">このサーバーは栄東中学校・栄東高校の関係者の方であれば誰でも入ることができます。</li>
-                            <li class="list-group-item">運用者は提供するサービスを利用したことによって生じた不利益な事柄への責任は一切負わないものとします。</li>
-                        </ul>
-                    </div>
+                </div>
             </div>
             <a class="nh-btn nh-back nh-topspace" href="../ship-notify/">Back</a>
         </div>
